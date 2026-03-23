@@ -20,12 +20,12 @@ public sealed class DropOfGold : ModSmithPotionModel
 
   public override TargetType TargetType => TargetType.AnyPlayer;
 
-  protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("GoldAmount", 100m)];
+  protected override IEnumerable<DynamicVar> CanonicalVars => [new GoldVar(100)];
 
   protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
   {
     AssertValidForTargetedPotion(target);
     NCombatRoom.Instance?.PlaySplashVfx(target, StsColors.gold);
-    await PlayerCmd.GainGold(base.DynamicVars["GoldAmount"].BaseValue, target.Player!);
+    await PlayerCmd.GainGold(DynamicVars.Gold.IntValue, target.Player!);
   }
 }

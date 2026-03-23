@@ -9,9 +9,9 @@ namespace Cpimhoff.Sts2.ModSmith.Models;
 
 public abstract class ModSmithPotionModel : PotionModel
 {
-  protected virtual string PackedImagePath { get; } = ModSmithMain.Res.ModSmith("images/potion-default.png");
+  protected virtual string PackedImagePath => ModSmithMain.Res.ModSmith("images/potion-default.png");
 
-  protected virtual string PackedOutlinePath { get; } = ModSmithMain.Res.Global("images/potions/atlases/potion_outline_atlas.sprites/gamblers_brew.tres");
+  protected virtual string PackedOutlinePath => ModSmithMain.Res.ModSmith("images/empty.png");
 
   protected override Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
   {
