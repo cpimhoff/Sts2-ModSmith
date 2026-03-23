@@ -1,4 +1,5 @@
 
+using Cpimhoff.Sts2.ModSmith.Main;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -8,9 +9,9 @@ namespace Cpimhoff.Sts2.ModSmith.Models;
 
 public abstract class ModSmithPotionModel : PotionModel
 {
-  protected abstract string PackedImagePath { get; }
+  protected virtual string PackedImagePath { get; } = ModSmithMain.Res.ModSmith("images/potion-default.png");
 
-  protected abstract string PackedOutlinePath { get; }
+  protected virtual string PackedOutlinePath { get; } = ModSmithMain.Res.Global("images/potions/atlases/potion_outline_atlas.sprites/gamblers_brew.tres");
 
   protected override Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
   {
@@ -37,11 +38,9 @@ public abstract class ModSmithPotionModel : PotionModel
       if (customPath is string path)
       {
         result = path;
-        return true;
+        return false;
       }
-      else return false;
+      else return true;
     }
   }
-
 }
-

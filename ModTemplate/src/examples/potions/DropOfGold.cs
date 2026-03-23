@@ -5,27 +5,27 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Potions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
-using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 
 namespace ModTemplate;
 
+// An example potion that gives the player some gold.
+
 public sealed class DropOfGold : ModSmithPotionModel
 {
-  protected override string PackedImagePath => "res://images/placeholder.png";
-
-  protected override string PackedOutlinePath => "res://images/placeholder.png";
-
   public override PotionRarity Rarity => PotionRarity.Common;
 
   public override PotionUsage Usage => PotionUsage.AnyTime;
 
   public override TargetType TargetType => TargetType.AnyPlayer;
 
+  protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("GoldAmount", 100m)];
+
   protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
   {
-    PotionModel.AssertValidForTargetedPotion(target);
+    AssertValidForTargetedPotion(target);
     NCombatRoom.Instance?.PlaySplashVfx(target, StsColors.gold);
-    await PlayerCmd.GainGold(1m, target.Player!);
+    await PlayerCmd.GainGold(base.DynamicVars["GoldAmount"].BaseValue, target.Player!);
   }
 }

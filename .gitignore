@@ -33,6 +33,7 @@ publish/
 # Godot
 .godot/
 *.uid
+_pack_staging/
 
 # .NET Core
 project.lock.json
