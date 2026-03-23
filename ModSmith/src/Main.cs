@@ -5,7 +5,7 @@ using HarmonyLib;
 namespace Cpimhoff.Sts2.ModSmith.Main;
 
 [ModInitializer(nameof(Initialize))]
-public static class ModSmith
+public static class ModSmithMain
 {
 
   public const string ModId = "ModSmith";

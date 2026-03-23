@@ -12,9 +12,9 @@ namespace ModTemplate;
 
 public sealed class DropOfGold : ModSmithPotionModel
 {
-  protected override string PackedImagePath => "placeholder.png";
+  protected override string PackedImagePath => "res://images/placeholder.png";
 
-  protected override string PackedOutlinePath => "placeholder.png";
+  protected override string PackedOutlinePath => "res://images/placeholder.png";
 
   public override PotionRarity Rarity => PotionRarity.Common;
 

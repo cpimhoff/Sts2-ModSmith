@@ -2,6 +2,7 @@ using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using HarmonyLib;
 using Cpimhoff.Sts2.ModSmith.Registry;
+using MegaCrit.Sts2.Core.Models;
 
 namespace ModTemplate;
 
@@ -9,7 +10,7 @@ namespace ModTemplate;
 public static class ModTemplate
 {
 
-    public const string ModId = "ModTemplate";
+    public const string ModId = "ModTemplate"; // Must match the id in `ModTemplate.json`
 
     public static Logger Logger { get; } = new(ModId, LogType.Generic);
 
@@ -21,6 +22,8 @@ public static class ModTemplate
         Logger.Info("Patched all Harmony patches.");
 
         Registry.RegisterPotion<DropOfGold>();
+        var modelId = ModelDb.GetId<DropOfGold>();
+        Logger.Info($"Model ID: {modelId.Category}.{modelId.Entry}");
         Logger.Info("Registered potion.");
 
         Logger.Info("Initialized.");
