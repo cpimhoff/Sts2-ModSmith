@@ -13,6 +13,7 @@
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <OutputPath>.godot/publish/</OutputPath>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
         <PackageId>Cpimhoff.Sts2.ModSmith</PackageId>
         <Title>ModSmith</Title>
@@ -21,7 +22,7 @@
         <Authors>cpimhoff</Authors>
         <PackageReleaseNotes>Current</PackageReleaseNotes>
         <PackageTags>c#</PackageTags>
-        <NoWarn>$(NoWarn);NU5128;MSB3270</NoWarn>
+        <NoWarn>$(NoWarn);NU5128;MSB3270;CS1591;</NoWarn>
 
         <RepositoryUrl>https://github.com/cpimhoff/ModSmith-Sts2</RepositoryUrl>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
