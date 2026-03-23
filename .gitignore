@@ -7,6 +7,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/Dotnet.gitignore
 
+# VSCode
+ModSmith.code-workspace
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -22,6 +25,11 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+publish/
+
+# Godot
+.godot/
+*.uid
 
 # .NET Core
 project.lock.json

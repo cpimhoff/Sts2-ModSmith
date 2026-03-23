@@ -1,0 +1,11 @@
+{
+  "id": "ModTemplate",
+  "name": "ModTemplate",
+  "author": "your-name",
+  "description": "Mod for Slay the Spire II",
+  "version": "v0.0.0",
+  "has_pck": true,
+  "has_dll": true,
+  "dependencies": ["ModSmith"],
+  "affects_gameplay": true
+}
