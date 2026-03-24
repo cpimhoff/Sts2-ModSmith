@@ -13,7 +13,7 @@ public static class Registry
   /// </summary>
   public static void RegisterPotion<TPotion>() where TPotion : ModSmithPotionModel
   {
-    ModHelper.AddModelToPool<SharedPotionPool, TPotion>();
+    RegisterPotion<TPotion, SharedPotionPool>();
   }
 
   /// <summary>
@@ -29,7 +29,7 @@ public static class Registry
   /// </summary>
   public static void RegisterRelic<TRelic>() where TRelic : ModSmithRelicModel
   {
-    ModHelper.AddModelToPool<SharedRelicPool, TRelic>();
+    RegisterRelic<TRelic, SharedRelicPool>();
   }
 
   /// <summary>
@@ -38,5 +38,14 @@ public static class Registry
   public static void RegisterRelic<TRelic, TRelicPool>() where TRelic : ModSmithRelicModel where TRelicPool : RelicPoolModel
   {
     ModHelper.AddModelToPool<TRelicPool, TRelic>();
+  }
+
+  /// <summary>
+  /// Registers a new `ModSmithPowerModel`.
+  /// </summary>
+  public static void RegisterPower<TPower>() where TPower : ModSmithPowerModel
+  {
+    // nothing actually needed here -- will keep this around for consistency
+    // and future-proofing
   }
 }

@@ -8,5 +8,7 @@ public static class ModTemplateExamples
   {
     Registry.RegisterPotion<DropOfGold>();
     Registry.RegisterRelic<GoldArmor>();
+    Registry.RegisterPotion<GoldPaint>();
+    Registry.RegisterPower<MadeOfGold>();
   }
 }

@@ -21,7 +21,7 @@ public abstract class ModSmithPotionModel : PotionModel
   /// Make `PackedImagePath` and `PackedOutlinePath` overridable
   /// despite being private in the base class.
   [HarmonyPatch]
-  private static class PatchablePrivateMembers
+  private static class PatchableMembers
   {
     [HarmonyPrefix]
     [HarmonyPatch(typeof(PotionModel), "PackedImagePath", MethodType.Getter)]
@@ -33,11 +33,11 @@ public abstract class ModSmithPotionModel : PotionModel
     static bool PackedOutlinePath(PotionModel __instance, ref string __result) =>
         PatchPrivate((__instance as ModSmithPotionModel)?.PackedOutlinePath, ref __result);
 
-    static bool PatchPrivate(string? customPath, ref string result)
+    static bool PatchPrivate(string? customPath, ref string __result)
     {
       if (customPath is string path)
       {
-        result = path;
+        __result = path;
         return false;
       }
       else return true;

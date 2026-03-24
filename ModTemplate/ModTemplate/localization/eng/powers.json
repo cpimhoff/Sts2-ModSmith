@@ -1,1 +1,5 @@
-{}
+{
+  "MADE_OF_GOLD.title": "Made of Gold",
+  "MADE_OF_GOLD.description": "Whenever this creature is dealt unblocked attack damage and survives, attacker gains [blue]1[/blue] [gold]Gold[/gold].",
+  "MADE_OF_GOLD.smartDescription": "Whenever [gold]{OwnerName}[/gold] is dealt unblocked attack damage and survives, attacker gains [blue]{Amount}[/blue] [gold]Gold[/gold]."
+}
