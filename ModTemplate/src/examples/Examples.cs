@@ -10,5 +10,6 @@ public static class ModTemplateExamples
     Registry.RegisterRelic<GoldArmor>();
     Registry.RegisterPotion<GoldPaint>();
     Registry.RegisterPower<MadeOfGold>();
+    Registry.RegisterEvent<TheGoldCoinRoom>();
   }
 }

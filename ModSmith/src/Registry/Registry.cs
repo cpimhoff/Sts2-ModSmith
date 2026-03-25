@@ -1,4 +1,5 @@
 using Cpimhoff.Sts2.ModSmith.Models;
+using HarmonyLib;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.PotionPools;
@@ -47,5 +48,33 @@ public static class Registry
   {
     // nothing actually needed here -- will keep this around for consistency
     // and future-proofing
+  }
+
+  private static List<Type> _globalEventTypes = [];
+
+  /// <summary>
+  /// Registers a new `ModSmithEventModel` to the global event pool, making it
+  /// encounter-able in any act (further limited by its `IsAllowed` method).
+  /// </summary>
+  public static void RegisterEvent<TEvent>() where TEvent : ModSmithEventModel
+  {
+    // we cannot call `ModelDb.Get<TEvent>` here since the model db is not yet initialized
+    // so we store the type for later patching
+    _globalEventTypes.Add(typeof(TEvent));
+  }
+  // Patching events into a specific act is not yet supported
+
+  [HarmonyPatch]
+  private static class PatchRegisteredEvents
+  {
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(ModelDb), "AllSharedEvents", MethodType.Getter)]
+    static void AllSharedEventsAppendGlobal(ref IEnumerable<EventModel> __result)
+    {
+      var globalEvents = _globalEventTypes.Select(t => ModelDb.GetById<EventModel>(ModelDb.GetId(t)));
+      __result = __result
+        .Concat(globalEvents)
+        .Distinct();
+    }
   }
 }

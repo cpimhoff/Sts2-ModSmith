@@ -9,7 +9,7 @@ public abstract class ModSmithPowerModel : PowerModel
 {
   protected new virtual string PackedIconPath => ModSmithMain.Res.ModSmith("images/power-default.png");
 
-  protected virtual string BigIconPath => ModSmithMain.Res.ModSmith("images/power-default.png");
+  protected virtual string BigIconPath => PackedIconPath;
 
   /// Make `PackedImagePath` virtual and `BigIconPath` overridable
   /// despite being private or non-virtual in the base class.
