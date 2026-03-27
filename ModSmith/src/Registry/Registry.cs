@@ -1,11 +1,11 @@
-using Cpimhoff.Sts2.ModSmith.Models;
+using ModSmith.Models;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.PotionPools;
 using MegaCrit.Sts2.Core.Models.RelicPools;
 
-namespace Cpimhoff.Sts2.ModSmith.Registry;
+namespace ModSmith.Registry;
 
 public static class Registry
 {

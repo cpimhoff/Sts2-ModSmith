@@ -110,7 +110,7 @@
 
         <Message Text="Copying ModSmith to mods folder." Importance="high" />
         <ItemGroup>
-            <ModSmithFiles Include="$(NuGetPackageRoot)/Cpimhoff.Sts2.ModSmith/**/lib/**/ModSmith.dll;$(NuGetPackageRoot)/Cpimhoff.Sts2.ModSmith/**/Content/ModSmith.pck;$(NuGetPackageRoot)/Cpimhoff.Sts2.ModSmith/**/Content/ModSmith.json;"/>
+            <ModSmithFiles Include="$(NuGetPackageRoot)/ModSmith/**/lib/**/ModSmith.dll;$(NuGetPackageRoot)/ModSmith/**/Content/ModSmith.pck;$(NuGetPackageRoot)/ModSmith/**/Content/ModSmith.json;"/>
         </ItemGroup>
         <Copy SourceFiles="@(ModSmithFiles)" DestinationFolder="$(ModsPath)ModSmith/" />
     </Target>

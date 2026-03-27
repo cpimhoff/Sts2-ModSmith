@@ -1,11 +1,11 @@
 
-using Cpimhoff.Sts2.ModSmith.Main;
+using ModSmith.Main;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 
-namespace Cpimhoff.Sts2.ModSmith.Models;
+namespace ModSmith.Models;
 
 public abstract class ModSmithPotionModel : PotionModel
 {

@@ -1,7 +1,7 @@
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using HarmonyLib;
-using Cpimhoff.Sts2.ModSmith.Util;
+using ModSmith.Util;
 
 namespace ModTemplate;
 

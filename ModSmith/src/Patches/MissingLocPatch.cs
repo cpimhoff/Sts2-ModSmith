@@ -1,8 +1,8 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Localization;
-using Cpimhoff.Sts2.ModSmith.Main;
+using ModSmith.Main;
 
-namespace Cpimhoff.Sts2.ModSmith.Patches;
+namespace ModSmith.Patches;
 
 [HarmonyPatch(typeof(LocTable))]
 public class MissingLocPatch

@@ -1,5 +1,5 @@
-using Cpimhoff.Sts2.ModSmith.Models;
-using Cpimhoff.Sts2.ModSmith.Registry;
+using ModSmith.Models;
+using ModSmith.Registry;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;

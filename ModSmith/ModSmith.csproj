@@ -15,7 +15,7 @@
         <OutputPath>.godot/publish/</OutputPath>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
-        <PackageId>Cpimhoff.Sts2.ModSmith</PackageId>
+        <PackageId>ModSmith</PackageId>
         <Title>ModSmith</Title>
         <Description>Modding framework for Slay the Spire 2</Description>
         <Version>0.0.1</Version>

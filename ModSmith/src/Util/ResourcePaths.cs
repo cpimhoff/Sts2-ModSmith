@@ -1,4 +1,4 @@
-namespace Cpimhoff.Sts2.ModSmith.Util;
+namespace ModSmith.Util;
 
 public class ResourcePaths(string modId)
 {

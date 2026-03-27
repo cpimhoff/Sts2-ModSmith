@@ -1,9 +1,9 @@
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using HarmonyLib;
-using Cpimhoff.Sts2.ModSmith.Util;
+using ModSmith.Util;
 
-namespace Cpimhoff.Sts2.ModSmith.Main;
+namespace ModSmith.Main;
 
 [ModInitializer(nameof(Initialize))]
 public static class ModSmithMain

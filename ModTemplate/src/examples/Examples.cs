@@ -1,4 +1,4 @@
-using Cpimhoff.Sts2.ModSmith.Registry;
+using ModSmith.Registry;
 
 namespace ModTemplate;
 

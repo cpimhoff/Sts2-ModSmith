@@ -1,10 +1,10 @@
 
-using Cpimhoff.Sts2.ModSmith.Main;
+using ModSmith.Main;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 
-namespace Cpimhoff.Sts2.ModSmith.Models;
+namespace ModSmith.Models;
 
 public abstract class ModSmithRelicModel : RelicModel
 {
