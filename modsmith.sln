@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModSmith", "ModSmith\ModSmith.csproj", "{20CE52E9-97BA-4505-99D2-8484AB65C0BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModTemplate", "ModTemplate\ModTemplate.csproj", "{4F569843-3E9D-4A04-8553-0E86224208A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{20CE52E9-97BA-4505-99D2-8484AB65C0BF} = {20CE52E9-97BA-4505-99D2-8484AB65C0BF}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
