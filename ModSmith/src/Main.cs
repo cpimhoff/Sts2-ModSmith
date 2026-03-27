@@ -8,8 +8,8 @@ namespace ModSmith.Main;
 [ModInitializer(nameof(Initialize))]
 public static class ModSmithMain
 {
-
   public const string ModId = "ModSmith";
+  internal static Harmony Harmony = new(ModId);
 
   public static Logger Logger { get; } = new(ModId, LogType.Generic);
 
@@ -18,10 +18,7 @@ public static class ModSmithMain
   public static void Initialize()
   {
     Logger.Info("Initializing...");
-
-    Harmony harmony = new(ModId);
-    harmony.PatchAll();
-
+    Harmony.PatchAll();
     Logger.Info("Initialized.");
   }
 }

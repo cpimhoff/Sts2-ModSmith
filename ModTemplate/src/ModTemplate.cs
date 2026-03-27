@@ -6,7 +6,7 @@ using ModSmith.Util;
 namespace ModTemplate;
 
 [ModInitializer(nameof(Initialize))]
-public static class ModTemplate
+public static class ModTemplateMain
 {
     public const string ModId = "ModTemplate"; // Must match the id in `ModTemplate.json`
 
