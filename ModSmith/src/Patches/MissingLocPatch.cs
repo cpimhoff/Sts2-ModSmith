@@ -4,12 +4,15 @@ using ModSmith.Main;
 
 namespace ModSmith.Patches;
 
+/// <summary>
+/// Patch to handle missing localization keys a bit more gracefully.
+/// </summary>
 [HarmonyPatch(typeof(LocTable))]
 public class MissingLocPatch
 {
   [HarmonyPatch(nameof(LocTable.GetLocString))]
   [HarmonyPrefix]
-  public static bool Prefix(LocTable __instance, string key, string ____name, ref LocString __result)
+  private static bool Prefix(LocTable __instance, string key, string ____name, ref LocString __result)
   {
     if (__instance.HasEntry(key))
       return true;
@@ -21,7 +24,7 @@ public class MissingLocPatch
 
   [HarmonyPatch(nameof(LocTable.GetRawText))]
   [HarmonyPrefix]
-  public static bool Prefix(LocTable __instance, string key, string ____name, ref string __result)
+  private static bool Prefix(LocTable __instance, string key, string ____name, ref string __result)
   {
     if (__instance.HasEntry(key))
       return true;

@@ -1,0 +1,4 @@
+- name: Guided set up
+  href: guided.md
+- name: Manual set up
+  href: manual.md

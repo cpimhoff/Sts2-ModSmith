@@ -1,0 +1,4 @@
+- name: Examples
+  href: index.md
+- name: Potions
+  href: potions.md

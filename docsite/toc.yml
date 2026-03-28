@@ -1,0 +1,10 @@
+- name: Set up
+  href: docs/setup/
+- name: Concepts
+  href: docs/concepts/
+- name: API
+  href: api/
+- name: Examples
+  href: docs/examples/
+- name: Resources
+  href: docs/resources/index.md
