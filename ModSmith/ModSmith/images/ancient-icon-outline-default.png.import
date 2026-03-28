@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6r244jv85t4i"
-path="res://.godot/imported/ancient-bg-default.png-bf61de6c741e7bf687ff42321ed2837d.ctex"
+uid="uid://dvnf1ip378vlu"
+path="res://.godot/imported/ancient-icon-outline-default.png-d2ca83c1ba35e9b74c53de6a642c116f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ModSmith/images/ancient-bg-default.png"
-dest_files=["res://.godot/imported/ancient-bg-default.png-bf61de6c741e7bf687ff42321ed2837d.ctex"]
+source_file="res://ModSmith/images/ancient-icon-outline-default.png"
+dest_files=["res://.godot/imported/ancient-icon-outline-default.png-d2ca83c1ba35e9b74c53de6a642c116f.ctex"]
 
 [params]
 

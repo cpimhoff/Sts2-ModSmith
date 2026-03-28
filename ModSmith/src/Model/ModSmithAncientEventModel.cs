@@ -27,11 +27,11 @@ public abstract class ModSmithAncientEventModel : AncientEventModel
   /// The path to the map icon for the event.
   /// If not provided, a default icon will be used.
   /// </summary>
-  protected virtual string MapIconPath => ModSmithMain.Res.ModSmith("images/map-icon-default.png");
-  protected virtual string MapIconOutlinePath => ModSmithMain.Res.ModSmith("images/empty.png");
+  protected virtual string MapIconPath => ModSmithMain.Res.ModSmith("images/ancient-map-icon-default.png");
+  protected virtual string MapIconOutlinePath => ModSmithMain.Res.ModSmith("images/ancient-map-icon-outline-default.png");
 
   protected virtual string RunHistoryIconPath => ModSmithMain.Res.ModSmith("images/ancient-icon-default.png");
-  protected virtual string RunHistoryIconOutlinePath => ModSmithMain.Res.ModSmith("images/empty.png");
+  protected virtual string RunHistoryIconOutlinePath => ModSmithMain.Res.ModSmith("images/ancient-icon-outline-default.png");
 
   [HarmonyPatch]
   private static class PatchableMembers

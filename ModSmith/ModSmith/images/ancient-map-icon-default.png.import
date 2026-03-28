@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6r244jv85t4i"
-path="res://.godot/imported/ancient-bg-default.png-bf61de6c741e7bf687ff42321ed2837d.ctex"
+uid="uid://wl4tdpfru3hy"
+path="res://.godot/imported/ancient-map-icon-default.png-14c78b497209c66dd53ac29ac53c0a57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ModSmith/images/ancient-bg-default.png"
-dest_files=["res://.godot/imported/ancient-bg-default.png-bf61de6c741e7bf687ff42321ed2837d.ctex"]
+source_file="res://ModSmith/images/ancient-map-icon-default.png"
+dest_files=["res://.godot/imported/ancient-map-icon-default.png-14c78b497209c66dd53ac29ac53c0a57.ctex"]
 
 [params]
 
