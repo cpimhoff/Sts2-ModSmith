@@ -1,2 +1,8 @@
 - name: Overview
   href: index.md
+- name: Event hooks
+  href: event-hooks.md
+- name: Directory structure
+  href: directory-structure.md
+- name: Localization
+  href: localization.md

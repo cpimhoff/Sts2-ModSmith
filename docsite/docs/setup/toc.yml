@@ -2,3 +2,7 @@
   href: guided.md
 - name: Manual set up
   href: manual.md
+- name: Decompiling STS2
+  href: decompile.md
+- name: Troubleshooting
+  href: troubleshoot.md

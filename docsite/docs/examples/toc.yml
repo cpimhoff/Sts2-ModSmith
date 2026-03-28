@@ -2,3 +2,13 @@
   href: index.md
 - name: Potions
   href: potions.md
+- name: Cards
+  href: cards.md
+- name: Relics
+  href: relics.md
+- name: Powers
+  href: powers.md
+- name: Events
+  href: events.md
+- name: Ancients
+  href: ancients.md
