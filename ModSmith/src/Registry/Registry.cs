@@ -2,6 +2,7 @@ using ModSmith.Models;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Acts;
 using MegaCrit.Sts2.Core.Models.PotionPools;
 using MegaCrit.Sts2.Core.Models.RelicPools;
 using ModSmith.Main;
@@ -10,6 +11,15 @@ namespace ModSmith.Registry;
 
 public static class Registry
 {
+  /// <summary>
+  /// Registers a new `ModSmithCardModel` to a specified `CardPoolModel`,
+  /// such as `IroncladCardPool` for a character-specific card, `ColorlessCardPool` for a shared card, etc.
+  /// </summary>
+  public static void RegisterCard<TCard, TCardPool>() where TCard : ModSmithCardModel where TCardPool : CardPoolModel
+  {
+    ModHelper.AddModelToPool<TCardPool, TCard>();
+  }
+
   /// <summary>
   /// Registers a new `ModSmithPotionModel` to the `SharedPotionPool`.
   /// </summary>
@@ -103,6 +113,33 @@ public static class Registry
 
   private static Dictionary<Type, List<Type>> _actToAncientEventTypes = [];
   private static bool _hasInstalledAncientEventPatches = false;
+
+  /// <summary>
+  /// Registers a new `ModSmithAncientEventModel`.
+  /// If an `actNumber` is not specified, it will be registered for acts 2 and 3.
+  /// </summary>
+  public static void RegisterAncientEvent<TAncient>(int? actNumber = null) where TAncient : ModSmithAncientEventModel
+  {
+    if (actNumber is not null and < 2) throw new ArgumentException("Invalid act number.");
+
+    switch (actNumber)
+    {
+      case null:
+        RegisterAncientEvent<TAncient>(2);
+        RegisterAncientEvent<TAncient>(3);
+        break;
+      case 1:
+        RegisterAncientEvent<TAncient, Hive>();
+        RegisterAncientEvent<TAncient, Underdocks>();
+        break;
+      case 2:
+        RegisterAncientEvent<TAncient, Glory>();
+        break;
+      case 3:
+        RegisterAncientEvent<TAncient, Overgrowth>();
+        break;
+    }
+  }
 
   /// <summary>
   /// Registers a new `ModSmithAncientEventModel` to a specific act, making it
