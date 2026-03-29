@@ -1,3 +1,7 @@
+After discussion with the Discord community, please only use this package for its documentation. Defer to https://github.com/Alchyr/BaseLib-StS2
+
+---
+
 # Slay the Spire 2 ~ ModSmith
 
 Base mod for adding content to Slay the Spire 2.
