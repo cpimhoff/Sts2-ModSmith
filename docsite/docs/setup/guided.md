@@ -91,8 +91,9 @@ Congrats! You are now a modder!
 
 Now that your mod builds and runs, explore the rest of this documentation:
 
-- **[Concepts](../concepts/index.md)** — understand the high-level systems (event hooks, localization, resource paths)
-- **[Examples](../examples/index.md)** — browse fully-worked examples for cards, relics, events, and more
-- **[API Reference](/api/ModSmith.Models.html)** — detailed documentation for every ModSmith class and method
+- **[Decompile Slay the Spire 2](./decompile.md)**: Get access to all the Slay the Spire 2 source code and art assets for reference.
+- **[Concepts](../concepts/index.md)**: understand the core systems (event hooks, localization, resource paths) in Slay the Spire 2.
+- **[Examples](../examples/index.md)**: browse working examples for custom cards, relics, events, and more.
+- **[API Reference](/api/ModSmith.Models.html)**: detailed documentation for every ModSmith class and method.
 
-When you're ready to start adding your own content, remove the `DropOfGold.cs` from your mod, and start building!
+When you're ready to start adding your own content, remove the `StarterContent` from your mod, and start building!
