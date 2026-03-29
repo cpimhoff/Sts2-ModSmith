@@ -2,6 +2,7 @@ namespace MegaCrit.Sts2.Core.ValueProps;
 
 // Internal extensions provided by Sts2 internally and re-exported by ModSmith
 // since they seem pretty harmless.
+/// <hidden />
 public static class ValuePropExtensions
 {
   public static bool IsPoweredAttack(this ValueProp props)

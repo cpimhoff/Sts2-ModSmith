@@ -5,15 +5,19 @@ using ModSmith.Util;
 
 namespace ModSmith.Main;
 
+/// <summary>
+/// ModSmith's main entry point and shared resources.
+/// </summary>
 [ModInitializer(nameof(Initialize))]
 public static class ModSmithMain
 {
   public const string ModId = "ModSmith";
+
   internal static Harmony Harmony = new(ModId);
 
-  public static Logger Logger { get; } = new(ModId, LogType.Generic);
+  internal static Logger Logger { get; } = new(ModId, LogType.Generic);
 
-  public static ResourcePaths Res { get; } = new(ModId);
+  internal static ResourcePaths Res { get; } = new(ModId);
 
   public static void Initialize()
   {

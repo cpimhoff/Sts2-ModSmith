@@ -1,4 +1,4 @@
-# Slay the Spire II ~ ModSmith ~ ModTemplate
+# Slay the Spire 2 ~ ModSmith ~ ModTemplate
 
 This is a starter template for a mod built with `ModSmith`.
 

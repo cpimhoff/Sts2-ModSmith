@@ -1,0 +1,11 @@
+- name: Install
+  href: install.md
+- name: Guided set up
+  href: guided.md
+  items:
+    - name: Manual set up
+      href: manual.md
+- name: Decompiling STS2
+  href: decompile.md
+- name: Troubleshooting
+  href: troubleshoot.md

@@ -1,0 +1,208 @@
+/* ─── Fonts ─────────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bs-font-sans-serif: 'Inter', system-ui, -apple-system, sans-serif;
+    --bs-font-monospace: 'JetBrains Mono', 'SFMono-Regular', Menlo, Monaco, monospace;
+    --bs-body-line-height: 1.7;
+    --bs-body-font-size: 0.9375rem; /* 15px */
+}
+
+/* ─── Highlight.js themes ────────────────────────────────────────────────── */
+/* atom-one-light for light mode, atom-one-dark for dark mode.                */
+/* CSS nesting scopes the hljs rules to the active Bootstrap theme.           */
+[data-bs-theme="light"] {
+    pre code.hljs { display: block; overflow-x: auto; padding: 1em; }
+    code.hljs { padding: 3px 5px; }
+    .hljs { color: #383a42; background: #fafafa; }
+    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
+    .hljs-doctag, .hljs-formula, .hljs-keyword { color: #a626a4; }
+    .hljs-deletion, .hljs-name, .hljs-section, .hljs-selector-tag, .hljs-subst { color: #e45649; }
+    .hljs-literal { color: #0184bb; }
+    .hljs-addition, .hljs-attribute, .hljs-meta .hljs-string, .hljs-regexp, .hljs-string { color: #50a14f; }
+    .hljs-attr, .hljs-number, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-pseudo,
+    .hljs-template-variable, .hljs-type, .hljs-variable { color: #986801; }
+    .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-symbol, .hljs-title { color: #4078f2; }
+    .hljs-built_in, .hljs-class .hljs-title, .hljs-title.class_ { color: #c18401; }
+    .hljs-emphasis { font-style: italic; }
+    .hljs-strong { font-weight: 700; }
+    .hljs-link { text-decoration: underline; }
+}
+
+[data-bs-theme="dark"] {
+    pre code.hljs { display: block; overflow-x: auto; padding: 1em; }
+    code.hljs { padding: 3px 5px; }
+    .hljs { color: #abb2bf; background: #282c34; }
+    .hljs-comment, .hljs-quote { color: #5c6370; font-style: italic; }
+    .hljs-doctag, .hljs-formula, .hljs-keyword { color: #c678dd; }
+    .hljs-deletion, .hljs-name, .hljs-section, .hljs-selector-tag, .hljs-subst { color: #e06c75; }
+    .hljs-literal { color: #56b6c2; }
+    .hljs-addition, .hljs-attribute, .hljs-meta .hljs-string, .hljs-regexp, .hljs-string { color: #98c379; }
+    .hljs-attr, .hljs-number, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-pseudo,
+    .hljs-template-variable, .hljs-type, .hljs-variable { color: #d19a66; }
+    .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-symbol, .hljs-title { color: #61aeee; }
+    .hljs-built_in, .hljs-class .hljs-title, .hljs-title.class_ { color: #e6c07b; }
+    .hljs-emphasis { font-style: italic; }
+    .hljs-strong { font-weight: 700; }
+    .hljs-link { text-decoration: underline; }
+}
+
+/* ─── Type scale ─────────────────────────────────────────────────────────── */
+h1, .h1 { font-size: 1.75rem;  font-weight: 650; letter-spacing: -0.02em; line-height: 1.25; }
+h2, .h2 { font-size: 1.3rem;   font-weight: 600; letter-spacing: -0.01em; line-height: 1.3;  }
+h3, .h3 { font-size: 1.1rem;   font-weight: 600; line-height: 1.35; }
+h4, .h4 { font-size: 1rem;     font-weight: 600; }
+h5, .h5 { font-size: 0.9rem;   font-weight: 600; }
+h6, .h6 { font-size: 0.85rem;  font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* ─── Colors ─────────────────────────────────────────────────────────────── */
+[data-bs-theme="light"] {
+    --bs-primary:             #3d6fa8;
+    --bs-primary-rgb:         61, 111, 168;
+    --bs-link-color:          #3d6fa8;
+    --bs-link-color-rgb:      61, 111, 168;
+    --bs-link-hover-color:    #2b5285;
+    --bs-link-hover-color-rgb: 43, 82, 133;
+}
+
+[data-bs-theme="dark"] {
+    --bs-primary:             #6b9fd4;
+    --bs-primary-rgb:         107, 159, 212;
+    --bs-link-color:          #6b9fd4;
+    --bs-link-color-rgb:      107, 159, 212;
+    --bs-link-hover-color:    #90bae0;
+    --bs-link-hover-color-rgb: 144, 186, 224;
+}
+
+/* ─── Inline code chips ──────────────────────────────────────────────────── */
+/* Target only inline code, not code inside <pre> blocks.                     */
+:not(pre) > code {
+    color: inherit;
+    background-color: rgba(128, 128, 128, 0.1);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 0.3em;
+    padding: 0.1em 0.35em;
+    font-size: 0.875em;
+    white-space: nowrap;
+}
+
+/* ─── Callout blocks (NOTE / TIP / WARNING / IMPORTANT / CAUTION) ────────── */
+/* DocFX JS adds .alert + .alert-{info|warning|danger} at runtime.            */
+/* Override to a compact left-border style with a faint tinted background.    */
+.NOTE.alert, .TIP.alert, .WARNING.alert, .IMPORTANT.alert, .CAUTION.alert {
+    padding: 0.45rem 0.85rem;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: 3px solid var(--bs-alert-border-color);
+    border-radius: 0.25rem;
+}
+
+/* NOTE / TIP — muted blue */
+.NOTE.alert-info, .TIP.alert-info {
+    --bs-alert-color: inherit;
+    --bs-alert-bg: rgba(61, 111, 168, 0.07);
+    --bs-alert-border-color: #3d6fa8;
+}
+
+/* WARNING — muted amber */
+.WARNING.alert-warning {
+    --bs-alert-color: inherit;
+    --bs-alert-bg: rgba(180, 120, 0, 0.07);
+    --bs-alert-border-color: #c08800;
+}
+
+/* IMPORTANT / CAUTION — muted red */
+.IMPORTANT.alert-danger, .CAUTION.alert-danger {
+    --bs-alert-color: inherit;
+    --bs-alert-bg: rgba(180, 40, 50, 0.07);
+    --bs-alert-border-color: #b83040;
+}
+
+/* Compact label */
+.NOTE h5, .TIP h5, .WARNING h5, .IMPORTANT h5, .CAUTION h5 {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 0.3rem;
+    opacity: 0.65;
+}
+
+/* ─── Content ────────────────────────────────────────────────────────────── */
+article {
+    max-width: 800px;
+}
+#about-modsmith img {
+  border-radius: 4px;
+  box-shadow: 0px 0 4px darkgreen;
+}
+.navbar {
+  background-color: #0064000a;
+}
+
+/* ─── Navbar separators ──────────────────────────────────────────────────── */
+.navbar-nav li:nth-child(1),
+.navbar-nav li:nth-child(2),
+.navbar-nav li:nth-child(5) {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav li:nth-child(1)::before,
+.navbar-nav li:nth-child(2)::before,
+.navbar-nav li:nth-child(5)::before {
+    content: '·';
+    margin: 0 0.6rem;
+    opacity: 0.5;
+}
+
+.nav-link.active {
+  font-weight: 500;
+}
+
+/* ─── Heading ─────────────────────────────────────────────────────────────── */
+img#logo {
+  width: 36px;
+  margin-right: 8px;
+}
+
+/* ─── API Reference ────────────────────────────────────────────────────────── */
+h1 + .facts {
+  display: none;
+}
+
+.typelist.inheritedMembers,
+.typelist.implements,
+.typelist.inheritance {
+    display: none;
+}
+
+h4[id^="property-value"],
+h4[id^="property-value"] + dl.parameters {
+    display: none;
+}
+
+h4[id^="returns"],
+h4[id^="returns"]+dl.parameters {
+  display: none;
+}
+
+h4[id^="parameters"] {
+  display: none;
+}
+
+h2[id$="_remarks"] {
+  display: none;
+}
+
+h4[id$="_remarks"] {
+  display: none;
+}
+h4[id$="_remarks"]+.remarks {
+  opacity: 0.75;
+}
+
+h2#localization {
+  margin-top: 3rem;
+}

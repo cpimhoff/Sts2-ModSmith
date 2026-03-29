@@ -14,6 +14,8 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <OutputPath>.godot/publish/</OutputPath>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <DebugType>embedded</DebugType>
+        <EmbedAllSources>true</EmbedAllSources>
 
         <PackageId>ModSmith</PackageId>
         <Title>ModSmith</Title>
@@ -139,6 +141,8 @@
     <Target Name="CopyToModsFolderOnBuild" AfterTargets="AfterBuild">
         <Message Text="Copying .dll and manifest to mods folder." Importance="high" />
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)/$(MSBuildProjectName)/" />
+        <Copy SourceFiles="$(TargetDir)$(MSBuildProjectName).xml" DestinationFolder="$(ModsPath)/$(MSBuildProjectName)/"
+              Condition="Exists('$(TargetDir)$(MSBuildProjectName).xml')" />
         <Copy SourceFiles="$(MSBuildProjectName).json" DestinationFolder="$(ModsPath)/$(MSBuildProjectName)/" />
     </Target>
 

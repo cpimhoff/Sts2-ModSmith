@@ -9,6 +9,9 @@ using ModSmith.Main;
 
 namespace ModSmith.Registry;
 
+/// <summary>
+/// Shared registry for appending modded content into the game.
+/// </summary>
 public static class Registry
 {
   /// <summary>

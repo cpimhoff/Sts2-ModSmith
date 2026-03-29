@@ -8,9 +8,22 @@ using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Map;
 using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.Events;
 
 namespace ModSmith.Models;
 
+/// <summary>
+/// Base class for mod-defined ancient events.
+/// </summary>
+///
+/// <remarks>
+/// ## Localization
+/// <c>ancients.json</c> must contain localization keys for the ancient:
+/// <code>
+///   [ID].title     // The name of the ancient.
+///   [ID].epithet   // A subtitle for the ancient.
+/// </code>
+/// </remarks>
 public abstract class ModSmithAncientEventModel : AncientEventModel
 {
   /// <summary>
@@ -20,18 +33,79 @@ public abstract class ModSmithAncientEventModel : AncientEventModel
   /// displays the image centered and scaled to fit.
   /// </summary>
   protected virtual string BackgroundScenePath => ModSmithMain.Res.ModSmith("images/ancient-bg-default.png");
+
   private bool IsBackgroundSceneAnImage => !BackgroundScenePath.EndsWith(".tscn");
   private static string BasicAncientBackgroundScenePath => ModSmithMain.Res.ModSmith("scenes/basic_ancient_background.tscn");
 
   /// <summary>
-  /// The path to the map icon for the event.
+  /// The path to the map icon for the ancient.
+  ///
   /// If not provided, a default icon will be used.
   /// </summary>
   protected virtual string MapIconPath => ModSmithMain.Res.ModSmith("images/ancient-map-icon-default.png");
+
+  /// <summary>
+  /// The path to the map icon outline for the ancient.
+  ///
+  /// If not provided, a default icon will be used.
+  /// </summary>
   protected virtual string MapIconOutlinePath => ModSmithMain.Res.ModSmith("images/ancient-map-icon-outline-default.png");
 
+  /// <summary>
+  /// The path to the run history icon for the ancient.
+  /// This is also used as the icon for when the ancient is the speaker in dialogue.
+  ///
+  /// If not provided, a default icon will be used.
+  /// </summary>
   protected virtual string RunHistoryIconPath => ModSmithMain.Res.ModSmith("images/ancient-icon-default.png");
+
+  /// <summary>
+  /// The path to the run history icon outline for the ancient.
+  ///
+  /// If not provided, a default icon will be used.
+  /// </summary>
   protected virtual string RunHistoryIconOutlinePath => ModSmithMain.Res.ModSmith("images/ancient-icon-outline-default.png");
+
+  /// <summary>
+  /// All possible options that the ancient can offer.
+  ///
+  /// This is used to populate the ancient's unique relics and cards into the compendium,
+  /// and is not generally used during a run.
+  /// </summary>
+  public abstract override IReadOnlyList<EventOption> AllPossibleOptions { get; }
+
+  /// <summary>
+  /// Generate the options for the event, such as the relics or boons the player
+  /// can gain. Generally, ancients offer three options.
+  ///
+  /// Most ancients in the base game define 3 or more "pools" of options, and then
+  /// use `Rng.NextItem` to select one option from each pool.
+  /// </summary>
+  ///
+  /// <remarks>
+  /// The term "Initial" here is a bit misleading. Whatever you return here will be the
+  /// choices the player has when they encounter the ancient. The term "Initial" is reused
+  /// from the base "EventModel" class, in which event options can change over time.
+  /// This is not the case for ancients.
+  /// </remarks>
+  protected abstract override IReadOnlyList<EventOption> GenerateInitialOptions();
+
+  /// <summary>
+  /// Generate the dialogue sets for this ancient.
+  ///
+  /// If not provided, a default generic dialogue set will be used.
+  /// </summary>
+  protected override AncientDialogueSet DefineDialogues()
+  {
+    return new ModSmithDefaultAncientDialogueSet()
+    {
+      FirstVisitEverDialogue = null,
+      CharacterDialogues = [],
+      AgnosticDialogues = [
+        new AncientDialogue("")
+      ],
+    };
+  }
 
   [HarmonyPatch]
   private static class PatchableMembers
@@ -161,18 +235,6 @@ public abstract class ModSmithAncientEventModel : AncientEventModel
   // fully customize their dialogue set.
   private sealed class ModSmithDefaultAncientDialogueSet : AncientDialogueSet
   { }
-
-  protected override AncientDialogueSet DefineDialogues()
-  {
-    return new ModSmithDefaultAncientDialogueSet()
-    {
-      FirstVisitEverDialogue = null,
-      CharacterDialogues = [],
-      AgnosticDialogues = [
-        new AncientDialogue("")
-      ],
-    };
-  }
 
   [HarmonyPatch]
   private static class ModSmithDefaultAncientDialogueSetPatch
