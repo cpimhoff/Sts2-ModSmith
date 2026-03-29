@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/template",
+  "author": "Charlie Imhoff",
+  "classifications": ["Slay the Spire 2", "Modding", "ModSmith"],
+  "tags": { "language": "C#" },
+
+  "identity": "ModSmith.ModTemplate",
+  "name": "ModSmith Mod Template",
+  "shortName": "modsmith-mod",
+  "preferNameDirectory": true,
+
+  "sourceName": "ModTemplate",
+  "symbols": {
+    "StarterContent": {
+      "type": "parameter",
+      "dataType": "boolean",
+      "description": "Whether to include starter content.",
+      "defaultValue": false
+    },
+    "NoStarterContent": {
+      "type": "computed",
+      "dataType": "boolean",
+      "value": "(StarterContent == false)"
+    }
+  },
+
+  "sources": [
+    {
+      "exclude": [".template.config/**"],
+      "modifiers": [
+        {
+          "condition": "(NoStarterContent)",
+          "exclude": ["src/StarterContent/**"]
+        }
+      ]
+    }
+  ]
+}

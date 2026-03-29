@@ -1,5 +1,4 @@
-# Slay the Spire 2 ~ ModSmith ~ ModTemplate
+# ModTemplate
+## a Slay the Spire 2 mod
 
-This is a starter template for a mod built with `ModSmith`.
-
-You will need to replace `ModTemplate` in all file names and strings with your mod's name.
+Built with [ModSmith](https://github.com/cpimhoff/Sts2-ModSmith).

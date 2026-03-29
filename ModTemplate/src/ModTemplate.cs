@@ -19,13 +19,11 @@ public static class ModTemplateMain
         Logger.Info("Initializing...");
         Harmony harmony = new(ModId);
         harmony.PatchAll();
-        Logger.Info("Patched all Harmony patches.");
 
-        // ========================================================
-        // Register example content.
-        // You should remove this and replace with your own content.
-        ModTemplateExamples.RegisterAll();
-        // ========================================================
+        // Register your content...
+#if (!NoStarterContent)
+        StarterContent.RegisterStarterContent();
+#endif
 
         Logger.Info("Initialized.");
     }

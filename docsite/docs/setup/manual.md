@@ -16,5 +16,7 @@ This page enumerates the requirements to mod Slay the Spire 2.
 A ModSmith mod for Slay the Spire 2 can be quickly generated using a `dotnet` template:
 
 ```bash
-dotnet new ... --name YourModName
+dotnet new install ModSmith.Templates
+dotnet new modsmith-mod -o YourModName
+# starter content can also be included by using the `--StarterContent` flag
 ```

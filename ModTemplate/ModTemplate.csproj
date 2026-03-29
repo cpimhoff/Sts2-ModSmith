@@ -18,8 +18,6 @@
         <IsLinux Condition="$([MSBuild]::IsOSPlatform('Linux'))">true</IsLinux>
         <IsOSX Condition="$([MSBuild]::IsOSPlatform('OSX'))">true</IsOSX>
     </PropertyGroup>
-
-    <!-- Windows -->
     <PropertyGroup Condition="'$(IsWindows)' == 'true'">
         <AutoSteamPath>$(registry:HKEY_CURRENT_USER\Software\Valve\Steam@SteamPath)\steamapps</AutoSteamPath>
         <SteamLibraryPath Condition="Exists('$(AutoSteamPath)/common/Slay the Spire 2')">$(AutoSteamPath)</SteamLibraryPath>
@@ -31,8 +29,6 @@
         <ModsPath>$(Sts2Path)/mods</ModsPath>
         <Sts2DataDir>$(Sts2Path)/data_sts2_windows_x86_64</Sts2DataDir>
     </PropertyGroup>
-
-    <!-- Linux -->
     <PropertyGroup Condition="'$(IsLinux)' == 'true'">
         <SteamLibraryPath Condition="'$(SteamLibraryPath)' == ''">$(HOME)/.local/share/Steam/steamapps</SteamLibraryPath>
         <MegaDotPath Condition="'$(MegaDotPath)' == ''">$(SteamLibraryPath)/common/MegaDot/godot.x11.opt.tools.64</MegaDotPath>
@@ -41,8 +37,6 @@
         <ModsPath>$(Sts2Path)/mods</ModsPath>
         <Sts2DataDir>$(Sts2Path)/data_sts2_linuxbsd_x86_64</Sts2DataDir>
     </PropertyGroup>
-
-    <!-- macOS -->
     <PropertyGroup Condition="'$(IsOSX)' == 'true'">
         <SteamLibraryPath Condition="'$(SteamLibraryPath)' == ''">$(HOME)/Library/Application Support/Steam/steamapps</SteamLibraryPath>
         <MegaDotPath Condition="'$(MegaDotPath)' == ''">$(HOME)/Applications/MegaDot.app/Contents/MacOS/Godot</MegaDotPath>
@@ -51,7 +45,6 @@
         <ModsPath>$(Sts2Path)/SlayTheSpire2.app/Contents/MacOS/mods</ModsPath>
         <Sts2DataDir>$(Sts2Path)/SlayTheSpire2.app/Contents/Resources/data_sts2_macos_x86_64</Sts2DataDir>
     </PropertyGroup>
-
     <PropertyGroup>
         <!-- Disable architecture mismatch warning; mods are ideally built for all platforms (MSIL)
              while your local StS2 version will be for your specific platform. -->
@@ -69,13 +62,6 @@
             <!-- You can switch this to `true` to allow private/protected field references but may cause errors. -->
             <Publicize>false</Publicize>
         </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
-        <AdditionalFiles Include="$(MSBuildProjectName)/localization/**/*.json"/>
-
-        <!-- Reference `ModSmith` dynamically as part of development,
-        but do not reference it in the published package. -->
         <Reference Include="ModSmith">
             <HintPath>$(ModsPath)/ModSmith/ModSmith.dll</HintPath>
             <Private>false</Private>

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>ModSmith.Templates</PackageId>
+    <PackageType>Template</PackageType>
+    <TargetFramework>net9.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <BaseIntermediateOutputPath>obj/template/</BaseIntermediateOutputPath>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+
+    <Version>0.0.1</Version>
+    <Authors>cpimhoff</Authors>
+    <Description>Project template for creating ModSmith mods for Slay the Spire 2</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/cpimhoff/Sts2-ModSmith</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="**/*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="**/*"
+             Exclude="obj/**;bin/**;**/.godot/**;**.uid;packages/**;ModTemplate.Template.csproj;**/*.nupkg" />
+  </ItemGroup>
+
+</Project>

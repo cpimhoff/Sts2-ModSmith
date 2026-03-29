@@ -1,6 +1,8 @@
 {
+  //#if (!NoStarterContent)
   "COIN_FLIP.title": "Coin Flip",
   "COIN_FLIP.description": "Flip a coin and gain [blue]{Gold}[/blue] [gold]gold[/gold] on heads, lose{IfUpgraded:show: half|} as much on tails.",
   "COIN_FLIP.headsBanter": "[green]Heads![/green]",
   "COIN_FLIP.tailsBanter": "[red]Tails.[/red]"
+  //#endif
 }

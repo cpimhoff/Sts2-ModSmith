@@ -1,7 +1,7 @@
 REPO := git@github.com:cpimhoff/ModSmith-Sts2.git
 SITE_DIR := _site
 
-.PHONY: build serve deploy clean
+.PHONY: build serve release clean
 
 build:
 	docfx docfx.json
@@ -9,7 +9,7 @@ build:
 serve:
 	docfx docfx.json --serve
 
-deploy: clean build
+release: clean build
 	cd $(SITE_DIR) && \
 		git init && \
 		git checkout -b gh-pages && \

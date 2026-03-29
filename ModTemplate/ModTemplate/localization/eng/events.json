@@ -1,4 +1,5 @@
 {
+  //#if (!NoStarterContent)
   "THE_GOLD_COIN_ROOM.title": "The Gold Coin",
   "THE_GOLD_COIN_ROOM.pages.INITIAL.description": "You come into a room with a golden coin.\nWhen flipped, it will double on heads, but be destroyed on tails.\nDo you risk it?",
   "THE_GOLD_COIN_ROOM.pages.INITIAL.options.TAKE.title": "Pocket the coin.",
@@ -12,4 +13,5 @@
   "THE_GOLD_COIN_ROOM.pages.DOUBLED.options.DOUBLE_IT.title": "Flip the coin [jitter]again[/jitter].",
   "THE_GOLD_COIN_ROOM.pages.DOUBLED.options.DOUBLE_IT.description": "[sine]more...[/sine]",
   "THE_GOLD_COIN_ROOM.pages.BUST.description": "[red]Darn.[/red] The coin turns to dust."
+  //#endif
 }
