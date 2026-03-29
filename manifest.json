@@ -1,0 +1,575 @@
+{
+  "source_base_path": "/Users/charlie/code/sts2modding/ModSmith/docsite",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MegaCrit.Sts2.Core.ValueProps.ValuePropExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MegaCrit.Sts2.Core.ValueProps.ValuePropExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MegaCrit.Sts2.Core.ValueProps.ValuePropExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MegaCrit.Sts2.Core.ValueProps.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MegaCrit.Sts2.Core.ValueProps.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MegaCrit.Sts2.Core.ValueProps",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Main.ModSmithMain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Main.ModSmithMain.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Main.ModSmithMain",
+      "Summary": "<p sourcefile=\"api/ModSmith.Main.ModSmithMain.yml\" sourcestartlinenumber=\"1\">ModSmith's main entry point and shared resources.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Main.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Main.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Main",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Models.ModSmithAncientEventModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Models.ModSmithAncientEventModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Models.ModSmithAncientEventModel",
+      "Summary": "<p sourcefile=\"api/ModSmith.Models.ModSmithAncientEventModel.yml\" sourcestartlinenumber=\"1\">Base class for mod-defined ancient events.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Models.ModSmithCardModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Models.ModSmithCardModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Models.ModSmithCardModel",
+      "Summary": "<p sourcefile=\"api/ModSmith.Models.ModSmithCardModel.yml\" sourcestartlinenumber=\"1\">Base class for mod-defined cards.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Models.ModSmithEventModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Models.ModSmithEventModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Models.ModSmithEventModel",
+      "Summary": "<p sourcefile=\"api/ModSmith.Models.ModSmithEventModel.yml\" sourcestartlinenumber=\"1\">Base class for mod-defined events.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Models.ModSmithPotionModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Models.ModSmithPotionModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Models.ModSmithPotionModel",
+      "Summary": "<p sourcefile=\"api/ModSmith.Models.ModSmithPotionModel.yml\" sourcestartlinenumber=\"1\">Base class for mod-defined potions.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Models.ModSmithPowerModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Models.ModSmithPowerModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Models.ModSmithPowerModel",
+      "Summary": "<p sourcefile=\"api/ModSmith.Models.ModSmithPowerModel.yml\" sourcestartlinenumber=\"1\">Base class for mod-defined powers.</p>\n<p>\nNote that \"power\" does not exclusively refer to \"Power\" cards in the game.\nPowers are any status effect applied to a creature during combat,\nincluding debuffs like \"Vulnerable\".\n</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Models.ModSmithRelicModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Models.ModSmithRelicModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Models.ModSmithRelicModel",
+      "Summary": "<p sourcefile=\"api/ModSmith.Models.ModSmithRelicModel.yml\" sourcestartlinenumber=\"1\">Base class for mod-defined relics.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Patches.MissingLocPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Patches.MissingLocPatch.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Patches.MissingLocPatch",
+      "Summary": "<p sourcefile=\"api/ModSmith.Patches.MissingLocPatch.yml\" sourcestartlinenumber=\"1\">Patch to handle missing localization keys a bit more gracefully.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Patches.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Patches.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Patches",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Registry.Registry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Registry.Registry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Registry.Registry",
+      "Summary": "<p sourcefile=\"api/ModSmith.Registry.Registry.yml\" sourcestartlinenumber=\"1\">Shared registry for appending modded content into the game.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Registry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Registry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Registry",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Util.ResourcePaths.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Util.ResourcePaths.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Util.ResourcePaths",
+      "Summary": "<p sourcefile=\"api/ModSmith.Util.ResourcePaths.yml\" sourcestartlinenumber=\"1\">Helper class for constructing Godot resource paths.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ModSmith.Util.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ModSmith.Util.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ModSmith.Util",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/about/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/about/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/about/roadmap.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/about/roadmap.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/about/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/about/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/about/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/concepts/directory-structure.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/concepts/directory-structure.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/concepts/event-hooks.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/concepts/event-hooks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/concepts/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/concepts/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/concepts/localization.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/concepts/localization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/concepts/patching.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/concepts/patching.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/concepts/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/concepts/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/concepts/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/examples/ancients.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/examples/ancients.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/examples/cards.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/examples/cards.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/examples/events.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/examples/events.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/examples/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/examples/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/examples/potions.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/examples/potions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/examples/powers.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/examples/powers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/examples/relics.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/examples/relics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/examples/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/examples/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/examples/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/resources/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/resources/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/setup/decompile.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/setup/decompile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/setup/guided.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/setup/guided.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/setup/install.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/setup/install.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/setup/manual.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/setup/manual.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/setup/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/setup/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/setup/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/setup/troubleshoot.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/setup/troubleshoot.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/charlie_and_rolo.jpeg",
+      "output": {
+        "resource": {
+          "relative_path": "images/charlie_and_rolo.jpeg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

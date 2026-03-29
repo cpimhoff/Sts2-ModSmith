@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Event hooks | ModSmith </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Event hooks | ModSmith ">
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/cpimhoff/sts2_modsmith/blob/main/docsite/docs/concepts/event-hooks.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/icon.png" alt="ModSmith">
+            ModSmith
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="event-hooks">Event hooks</h1>
+
+<h2 id="what-is-abstractmodel">What is <code>AbstractModel</code>?</h2>
+<p>Every game entity that can participate in gameplay logic — cards, relics, potions, powers, events, and more — ultimately inherits from <code>AbstractModel</code> (defined in <code>MegaCrit.Sts2.Core.Models</code>). This base class declares a large collection of <code>virtual</code> methods that the game engine calls at specific moments during a run or combat encounter.</p>
+<p>When you subclass a ModSmith model (e.g. <code>ModSmithRelicModel</code>, <code>ModSmithPowerModel</code>), you are ultimately subclassing <code>AbstractModel</code>. Overriding its virtual methods is how you give your content behaviors that react to game events.</p>
+<h2 id="how-hooks-work">How hooks work</h2>
+<p>Each hook is a <code>virtual</code> method that returns <code>Task.CompletedTask</code> by default (i.e. does nothing). To respond to an event, override the method in your class:</p>
+<pre><code class="lang-csharp">public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+{
+    // Runs at the start of the owning player's turn
+    await GainGoldCommand.Run(player, 5);
+}
+</code></pre>
+<h2 id="hook-categories">Hook categories</h2>
+<p>The following is a high-level overview of the hook categories available. For the full, authoritative list, study the decompiled <code>AbstractModel.cs</code> — see <a href="../setup/decompile.html">Decompiling STS2</a>.</p>
+<h3 id="lifecycle--run-flow">Lifecycle &amp; run flow</h3>
+<p>These hooks fire around major run milestones.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When it fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AfterActEntered()</code></td>
+<td>When the player enters a new Act</td>
+</tr>
+<tr>
+<td><code>BeforeRoomEntered(room)</code></td>
+<td>Before the player enters a room</td>
+</tr>
+<tr>
+<td><code>AfterRoomEntered(room)</code></td>
+<td>After the player enters a room</td>
+</tr>
+<tr>
+<td><code>AfterMapGenerated(map, actIndex)</code></td>
+<td>After the Act map is generated</td>
+</tr>
+<tr>
+<td><code>ModifyGeneratedMap(...)</code> / <code>ModifyGeneratedMapLate(...)</code></td>
+<td>Modify the generated map</td>
+</tr>
+</tbody>
+</table>
+<h3 id="combat-lifecycle">Combat lifecycle</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When it fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BeforeCombatStart()</code></td>
+<td>Before combat begins (setup phase)</td>
+</tr>
+<tr>
+<td><code>BeforeCombatStartLate()</code></td>
+<td>Late setup, after most initialization</td>
+</tr>
+<tr>
+<td><code>AfterCreatureAddedToCombat(creature)</code></td>
+<td>When a creature joins the combat</td>
+</tr>
+<tr>
+<td><code>AfterCombatVictoryEarly(room)</code></td>
+<td>Immediately on victory, before rewards</td>
+</tr>
+<tr>
+<td><code>AfterCombatVictory(room)</code></td>
+<td>On combat victory</td>
+</tr>
+<tr>
+<td><code>AfterCombatEnd(room)</code></td>
+<td>After the combat room is fully resolved</td>
+</tr>
+</tbody>
+</table>
+<h3 id="turn-flow">Turn flow</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When it fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BeforeSideTurnStart(...)</code></td>
+<td>Before either side's turn starts</td>
+</tr>
+<tr>
+<td><code>AfterPlayerTurnStartEarly(...)</code></td>
+<td>Very early in the player's turn start</td>
+</tr>
+<tr>
+<td><code>AfterPlayerTurnStart(...)</code></td>
+<td>At the start of the player's turn</td>
+</tr>
+<tr>
+<td><code>AfterPlayerTurnStartLate(...)</code></td>
+<td>Late in the player's turn start</td>
+</tr>
+<tr>
+<td><code>BeforePlayPhaseStart(...)</code></td>
+<td>Before the player can play cards</td>
+</tr>
+<tr>
+<td><code>BeforeTurnEndVeryEarly(...)</code></td>
+<td>Very early in turn end processing</td>
+</tr>
+<tr>
+<td><code>BeforeTurnEndEarly(...)</code></td>
+<td>Early in turn end</td>
+</tr>
+<tr>
+<td><code>BeforeTurnEnd(...)</code></td>
+<td>Standard turn end hook</td>
+</tr>
+<tr>
+<td><code>AfterTurnEnd(...)</code></td>
+<td>After turn ends</td>
+</tr>
+<tr>
+<td><code>AfterTurnEndLate(...)</code></td>
+<td>Late turn end — cleanup</td>
+</tr>
+</tbody>
+</table>
+<h3 id="card-flow">Card flow</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When it fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BeforeHandDraw(...)</code> / <code>BeforeHandDrawLate(...)</code></td>
+<td>Before cards are drawn to hand</td>
+</tr>
+<tr>
+<td><code>AfterCardDrawnEarly(...)</code></td>
+<td>Early after a card is drawn</td>
+</tr>
+<tr>
+<td><code>AfterCardDrawn(...)</code></td>
+<td>After a card is drawn</td>
+</tr>
+<tr>
+<td><code>BeforeCardPlayed(cardPlay)</code></td>
+<td>Before a card is played</td>
+</tr>
+<tr>
+<td><code>AfterCardPlayed(...)</code></td>
+<td>After a card is played</td>
+</tr>
+<tr>
+<td><code>AfterCardPlayedLate(...)</code></td>
+<td>Late after a card is played</td>
+</tr>
+<tr>
+<td><code>AfterCardDiscarded(...)</code></td>
+<td>After a card is discarded</td>
+</tr>
+<tr>
+<td><code>AfterCardExhausted(...)</code></td>
+<td>After a card is exhausted</td>
+</tr>
+<tr>
+<td><code>AfterCardRetained(...)</code></td>
+<td>After a card is retained</td>
+</tr>
+<tr>
+<td><code>AfterCardChangedPiles(...)</code></td>
+<td>Any time a card moves between piles</td>
+</tr>
+<tr>
+<td><code>AfterCardEnteredCombat(...)</code></td>
+<td>When a card joins this combat</td>
+</tr>
+<tr>
+<td><code>AfterHandEmptied(...)</code></td>
+<td>After the hand is emptied</td>
+</tr>
+<tr>
+<td><code>AfterShuffle(...)</code></td>
+<td>After the discard pile is shuffled into the draw pile</td>
+</tr>
+<tr>
+<td><code>BeforeCardRemoved(card)</code></td>
+<td>Before a card is permanently removed</td>
+</tr>
+<tr>
+<td><code>ModifyCardPlayCount(...)</code></td>
+<td>Override how many times a card is played</td>
+</tr>
+<tr>
+<td><code>ModifyHandDraw(...)</code> / <code>ModifyHandDrawLate(...)</code></td>
+<td>Adjust the number of cards drawn</td>
+</tr>
+<tr>
+<td><code>TryModifyEnergyCostInCombat(...)</code></td>
+<td>Override a card's energy cost in combat</td>
+</tr>
+<tr>
+<td><code>TryModifyCardBeingAddedToDeck(...)</code></td>
+<td>Replace a card being added to the deck</td>
+</tr>
+</tbody>
+</table>
+<h3 id="damage--block">Damage &amp; block</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When it fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BeforeDamageReceived(...)</code></td>
+<td>Before a creature takes damage</td>
+</tr>
+<tr>
+<td><code>AfterDamageReceived(...)</code></td>
+<td>After a creature takes damage</td>
+</tr>
+<tr>
+<td><code>AfterDamageReceivedLate(...)</code></td>
+<td>Late after taking damage</td>
+</tr>
+<tr>
+<td><code>AfterDamageGiven(...)</code></td>
+<td>After a creature deals damage</td>
+</tr>
+<tr>
+<td><code>BeforeBlockGained(...)</code></td>
+<td>Before block is applied</td>
+</tr>
+<tr>
+<td><code>AfterBlockGained(...)</code></td>
+<td>After block is applied</td>
+</tr>
+<tr>
+<td><code>AfterBlockCleared(creature)</code></td>
+<td>After block is cleared</td>
+</tr>
+<tr>
+<td><code>AfterBlockBroken(creature)</code></td>
+<td>After block is broken by damage</td>
+</tr>
+<tr>
+<td><code>ModifyDamageAdditive(...)</code></td>
+<td>Add a flat amount to damage</td>
+</tr>
+<tr>
+<td><code>ModifyDamageMultiplicative(...)</code></td>
+<td>Multiply damage</td>
+</tr>
+<tr>
+<td><code>ModifyDamageCap(...)</code></td>
+<td>Cap the maximum damage dealt</td>
+</tr>
+<tr>
+<td><code>ModifyBlockAdditive(...)</code></td>
+<td>Add to block gained</td>
+</tr>
+<tr>
+<td><code>ModifyBlockMultiplicative(...)</code></td>
+<td>Multiply block gained</td>
+</tr>
+<tr>
+<td><code>ModifyHpLostBeforeOsty(...)</code></td>
+<td>Modify HP lost before Osty calculation</td>
+</tr>
+<tr>
+<td><code>ModifyHpLostAfterOsty(...)</code></td>
+<td>Modify HP lost after Osty calculation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="powers--status">Powers &amp; status</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When it fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BeforePowerAmountChanged(...)</code></td>
+<td>Before a power's stack count changes</td>
+</tr>
+<tr>
+<td><code>AfterPowerAmountChanged(...)</code></td>
+<td>After a power's stack count changes</td>
+</tr>
+<tr>
+<td><code>TryModifyPowerAmountReceived(...)</code></td>
+<td>Intercept and change how much of a power is applied</td>
+</tr>
+<tr>
+<td><code>ModifyPowerAmountGiven(...)</code></td>
+<td>Modify the amount of a power given by this model</td>
+</tr>
+</tbody>
+</table>
+<h3 id="potions">Potions</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When it fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BeforePotionUsed(potion, target)</code></td>
+<td>Before a potion is used</td>
+</tr>
+<tr>
+<td><code>AfterPotionUsed(potion, target)</code></td>
+<td>After a potion is used</td>
+</tr>
+<tr>
+<td><code>AfterPotionDiscarded(potion)</code></td>
+<td>After a potion is discarded</td>
+</tr>
+<tr>
+<td><code>AfterPotionProcured(potion)</code></td>
+<td>After a potion is obtained</td>
+</tr>
+<tr>
+<td><code>ShouldProcurePotion(potion, player)</code></td>
+<td>Return <code>false</code> to prevent obtaining a potion</td>
+</tr>
+</tbody>
+</table>
+<h3 id="economy">Economy</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When it fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AfterGoldGained(player)</code></td>
+<td>After the player gains gold</td>
+</tr>
+<tr>
+<td><code>ShouldGainGold(amount, player)</code></td>
+<td>Return <code>false</code> to prevent a gold gain</td>
+</tr>
+<tr>
+<td><code>AfterStarsGained(amount, gainer)</code></td>
+<td>After stars are gained</td>
+</tr>
+<tr>
+<td><code>AfterStarsSpent(amount, spender)</code></td>
+<td>After stars are spent</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rewards--rest-sites">Rewards &amp; rest sites</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When it fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BeforeRewardsOffered(player, rewards)</code></td>
+<td>Before rewards are shown</td>
+</tr>
+<tr>
+<td><code>AfterRewardTaken(player, reward)</code></td>
+<td>After a reward is taken</td>
+</tr>
+<tr>
+<td><code>TryModifyRewards(...)</code> / <code>TryModifyRewardsLate(...)</code></td>
+<td>Add/remove/replace rewards</td>
+</tr>
+<tr>
+<td><code>TryModifyRestSiteOptions(...)</code></td>
+<td>Modify available rest site options</td>
+</tr>
+<tr>
+<td><code>TryModifyRestSiteHealRewards(...)</code></td>
+<td>Modify rest site heal rewards</td>
+</tr>
+<tr>
+<td><code>AfterRestSiteHeal(player, isMimicked)</code></td>
+<td>After healing at a rest site</td>
+</tr>
+</tbody>
+</table>
+<h3 id="guard-methods-should">Guard methods (<code>Should*</code>)</h3>
+<p>These methods return <code>bool</code>. Returning <code>false</code> from them <strong>prevents</strong> the default behavior.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>What it prevents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ShouldDie(creature)</code></td>
+<td>Prevents a creature from dying</td>
+</tr>
+<tr>
+<td><code>ShouldClearBlock(creature)</code></td>
+<td>Prevents block from being cleared</td>
+</tr>
+<tr>
+<td><code>ShouldDraw(player, fromHandDraw)</code></td>
+<td>Prevents a card draw</td>
+</tr>
+<tr>
+<td><code>ShouldFlush(player)</code></td>
+<td>Prevents hand flush</td>
+</tr>
+<tr>
+<td><code>ShouldAddToDeck(card)</code></td>
+<td>Prevents a card being added to the deck</td>
+</tr>
+<tr>
+<td><code>ShouldPlay(card, autoPlayType)</code></td>
+<td>Prevents a card from being auto-played</td>
+</tr>
+<tr>
+<td><code>ShouldTakeExtraTurn(player)</code></td>
+<td>Grants an extra turn (return <code>true</code>)</td>
+</tr>
+<tr>
+<td><code>ShouldStopCombatFromEnding()</code></td>
+<td>Keeps combat alive even after conditions are met</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tips">Tips</h2>
+<ul>
+<li><strong><code>Before*</code> vs <code>After*</code></strong> — <code>Before</code> hooks let you react before the action resolves (sometimes allowing intervention); <code>After</code> hooks let you react once the outcome is known.</li>
+<li><strong><code>*Early</code> / <code>*Late</code> variants</strong> — multiple models may hook the same event. Use the timing variant that gives you the ordering you need.</li>
+<li><strong><code>TryModify*</code> methods</strong> — these use an <code>out</code> parameter pattern. Return <code>true</code> and set the out value to override the default. Return <code>false</code> to leave it unchanged.</li>
+<li><strong>Modifier methods</strong> — <code>Modify*</code> methods receive the current value and return a modified one. They are called for every model that can affect the value, so keep them purely additive/multiplicative rather than setting an absolute value.</li>
+</ul>
+<p>For the complete method signatures and parameter types, study the decompiled <code>AbstractModel.cs</code> — see <a href="../setup/decompile.html">Decompiling STS2</a>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/cpimhoff/sts2_modsmith/blob/main/docsite/docs/concepts/event-hooks.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

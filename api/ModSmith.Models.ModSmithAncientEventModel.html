@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ModSmithAncientEventModel | ModSmith </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ModSmithAncientEventModel | ModSmith ">
+      
+      <meta name="description" content="Base class for mod-defined ancient events.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/cpimhoff/sts2_modsmith/new/main/apiSpec/new?filename=ModSmith_Models_ModSmithAncientEventModel.md&amp;value=---%0Auid%3A%20ModSmith.Models.ModSmithAncientEventModel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="ModSmith">
+            ModSmith
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ModSmith.Models.ModSmithAncientEventModel">
+
+
+
+  <h1 id="ModSmith_Models_ModSmithAncientEventModel" data-uid="ModSmith.Models.ModSmithAncientEventModel" class="text-break">
+Class ModSmithAncientEventModel  <a class="header-action link-secondary" title="View source" href="https://github.com/cpimhoff/sts2_modsmith/blob/main/ModSmith/src/Model/ModSmithAncientEventModel.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ModSmith.html">ModSmith</a>.<a class="xref" href="ModSmith.Models.html">Models</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ModSmith.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Base class for mod-defined ancient events.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ModSmithAncientEventModel : AncientEventModel, IComparable&lt;AbstractModel&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">AbstractModel</span></div>
+      <div><span class="xref">EventModel</span></div>
+      <div><span class="xref">AncientEventModel</span></div>
+      <div><span class="xref">ModSmithAncientEventModel</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<span class="xref">AbstractModel</span>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <span class="xref">AncientEventModel.CharKey&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.BeforeEventStarted()</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.GenerateInitialOptionsWrapper()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">AncientEventModel.SetInitialEventState(bool)</a>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.StartPreFinished()</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.Done()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">AncientEventModel.RelicOption&lt;T&gt;(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">AncientEventModel.RelicOption(RelicModel, string, string)</a>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.LocTable</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.Epithet</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.DialogueSet</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.AnyCharacterDialogueBlacklist</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.ButtonColor</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.DialogueColor</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.DebugOption</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.LayoutType</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.MapIcon</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.MapIconOutline</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.MapNodeAssetPaths</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.AmbientBgm</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.HasAmbientBgm</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.RunHistoryIcon</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.RunHistoryIconOutline</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.HealedAmount</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.EventButtonColor</span>
+    </div>
+    <div>
+      <span class="xref">AncientEventModel.InitialDescription</span>
+    </div>
+    <div>
+      <span class="xref">EventModel._initialPageKey</span>
+    </div>
+    <div>
+      <span class="xref">EventModel._combatStateForCombatLayout</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">EventModel.GetOptionTitle(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">EventModel.GetOptionDescription(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">EventModel.BeginEvent(Player, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">EventModel.ReplaceNullOptions(List&lt;EventOption&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">EventModel.ClearCurrentOptions()</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.IsAllowed(RunState)</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.CreateScene()</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.SetNode(Control)</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.CreateInitialPortrait()</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.CreateBackgroundScene()</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.CreateVfx()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">EventModel.CreateCombatRoomVisuals(IEnumerable&lt;Player&gt;, ActModel)</a>
+    </div>
+    <div>
+      <span class="xref">EventModel.GenerateInternalCombatState(IRunState)</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.ToMutable()</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.DeepCloneFields()</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.AfterCloned()</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.CalculateVars()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">EventModel.L10NLookup(string)</a>
+    </div>
+    <div>
+      <span class="xref">EventModel.GetAssetPaths(IRunState)</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.OnRoomEnter()</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.Resume(AbstractRoom)</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.SetEventFinished(LocString)</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.AfterEventStarted()</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.OnEventFinished()</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.EnsureCleanup()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">EventModel.SetEventState(LocString, IEnumerable&lt;EventOption&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">EventModel.EnterCombatWithoutExitingEvent&lt;T&gt;(IReadOnlyList&lt;Reward&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">EventModel.EnterCombatWithoutExitingEvent(EncounterModel, IReadOnlyList&lt;Reward&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">EventModel.RelicOption&lt;T&gt;(Func&lt;Task&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">EventModel.RelicOption(RelicModel, Func&lt;Task&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">EventModel.InitialOptionKey(string)</a>
+    </div>
+    <div>
+      <span class="xref">EventModel.IsDeterministic</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.ShouldReceiveCombatHooks</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.Title</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.Owner</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.IsShared</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.Description</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.CanonicalEncounter</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.IsFinished</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.CurrentOptions</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.DynamicVars</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.CanonicalVars</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.Rng</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.GameInfoOptions</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.Node</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.CanonicalInstance</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.HasVfx</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.VfxOffset</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.StateChanged</span>
+    </div>
+    <div>
+      <span class="xref">EventModel.EnteringEventCombat</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.InitId(ModelId)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.CompareTo(AbstractModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AssertMutable()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AssertCanonical()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ClonePreservingMutability()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.MutableClone()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.InvokeExecutionFinished()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterActEntered()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterAddToDeckPrevented(CardModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeAttack(AttackCommand)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterAttack(AttackCommand)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterBlockCleared(Creature)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.BeforeBlockGained(Creature, decimal, ValueProp, CardModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.AfterBlockGained(Creature, decimal, ValueProp, CardModel)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterBlockBroken(Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterCardChangedPiles(CardModel, PileType, AbstractModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterCardChangedPilesLate(CardModel, PileType, AbstractModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterCardDiscarded(PlayerChoiceContext, CardModel)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">AbstractModel.AfterCardDrawnEarly(PlayerChoiceContext, CardModel, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">AbstractModel.AfterCardDrawn(PlayerChoiceContext, CardModel, bool)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterCardEnteredCombat(CardModel)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">AbstractModel.AfterCardGeneratedForCombat(CardModel, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">AbstractModel.AfterCardExhausted(PlayerChoiceContext, CardModel, bool)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeCardAutoPlayed(CardModel, Creature, AutoPlayType)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeCardPlayed(CardPlay)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterCardPlayed(PlayerChoiceContext, CardPlay)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterCardPlayedLate(PlayerChoiceContext, CardPlay)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterCardRetained(CardModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeCombatStart()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeCombatStartLate()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterCombatEnd(CombatRoom)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterCombatVictoryEarly(CombatRoom)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterCombatVictory(CombatRoom)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterCreatureAddedToCombat(Creature)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.AfterCurrentHpChanged(Creature, decimal)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterDamageGiven(PlayerChoiceContext, Creature, DamageResult, ValueProp, Creature, CardModel)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.BeforeDamageReceived(PlayerChoiceContext, Creature, decimal, ValueProp, Creature, CardModel)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterDamageReceived(PlayerChoiceContext, Creature, DamageResult, ValueProp, Creature, CardModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterDamageReceivedLate(PlayerChoiceContext, Creature, DamageResult, ValueProp, Creature, CardModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeDeath(Creature)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">AbstractModel.AfterDeath(PlayerChoiceContext, Creature, bool, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">AbstractModel.AfterDiedToDoom(PlayerChoiceContext, IReadOnlyList&lt;Creature&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterEnergyReset(Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterEnergyResetLate(Player)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">AbstractModel.AfterEnergySpent(CardModel, int)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeCardRemoved(CardModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeFlush(PlayerChoiceContext, Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeFlushLate(PlayerChoiceContext, Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterGoldGained(Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeHandDraw(Player, PlayerChoiceContext, CombatState)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeHandDrawLate(Player, PlayerChoiceContext, CombatState)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterHandEmptied(PlayerChoiceContext, Player)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">AbstractModel.AfterItemPurchased(Player, MerchantEntry, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">AbstractModel.AfterMapGenerated(ActMap, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.AfterModifyingBlockAmount(decimal, CardModel, CardPlay)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterModifyingCardPlayCount(CardModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterModifyingCardPlayResultPileOrPosition(CardModel, PileType, CardPilePosition)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterModifyingOrbPassiveTriggerCount(OrbModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterModifyingCardRewardOptions()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterModifyingDamageAmount(CardModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterModifyingHandDraw()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterPreventingDraw()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterModifyingHpLostBeforeOsty()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterModifyingHpLostAfterOsty()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterModifyingPowerAmountReceived(PowerModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterModifyingPowerAmountGiven(PowerModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterModifyingRewards()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">AbstractModel.BeforeRewardsOffered(Player, IReadOnlyList&lt;Reward&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterOrbChanneled(PlayerChoiceContext, Player, OrbModel)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">AbstractModel.AfterOrbEvoked(PlayerChoiceContext, OrbModel, IEnumerable&lt;Creature&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterOstyRevived(Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforePotionUsed(PotionModel, Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterPotionUsed(PotionModel, Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterPotionDiscarded(PotionModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterPotionProcured(PotionModel)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.BeforePowerAmountChanged(PowerModel, decimal, Creature, Creature, CardModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.AfterPowerAmountChanged(PowerModel, decimal, Creature, CardModel)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterPreventingBlockClear(AbstractModel, Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterPreventingDeath(Creature)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">AbstractModel.AfterRestSiteHeal(Player, bool)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterRestSiteSmith(Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterRewardTaken(Player, Reward)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeRoomEntered(AbstractRoom)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterRoomEntered(AbstractRoom)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterShuffle(PlayerChoiceContext, Player)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">AbstractModel.AfterStarsSpent(int, Player)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">AbstractModel.AfterStarsGained(int, Player)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.AfterForge(decimal, Player, AbstractModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.AfterSummon(PlayerChoiceContext, Player, decimal)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterTakingExtraTurn(Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterTargetingBlockedVfx(Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeSideTurnStart(PlayerChoiceContext, CombatSide, CombatState)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterSideTurnStart(CombatSide, CombatState)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterPlayerTurnStartEarly(PlayerChoiceContext, Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterPlayerTurnStart(PlayerChoiceContext, Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterPlayerTurnStartLate(PlayerChoiceContext, Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforePlayPhaseStart(PlayerChoiceContext, Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeTurnEndVeryEarly(PlayerChoiceContext, CombatSide)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeTurnEndEarly(PlayerChoiceContext, CombatSide)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.BeforeTurnEnd(PlayerChoiceContext, CombatSide)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterTurnEnd(PlayerChoiceContext, CombatSide)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.AfterTurnEndLate(PlayerChoiceContext, CombatSide)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">AbstractModel.ModifyAttackHitCount(AttackCommand, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyBlockAdditive(Creature, decimal, ValueProp, CardModel, CardPlay)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyBlockMultiplicative(Creature, decimal, ValueProp, CardModel, CardPlay)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">AbstractModel.ModifyCardPlayCount(CardModel, Creature, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">AbstractModel.ModifyCardPlayResultPileTypeAndPosition(CardModel, bool, ResourceInfo, PileType, CardPilePosition)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">AbstractModel.ModifyOrbPassiveTriggerCounts(OrbModel, int)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ModifyCardRewardCreationOptions(Player, CardCreationOptions)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ModifyCardRewardCreationOptionsLate(Player, CardCreationOptions)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyCardRewardUpgradeOdds(Player, CardModel, decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyDamageAdditive(Creature, decimal, ValueProp, Creature, CardModel)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ModifyDamageCap(Creature, ValueProp, Creature, CardModel)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyDamageMultiplicative(Creature, decimal, ValueProp, Creature, CardModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">AbstractModel.ModifyGeneratedMap(IRunState, ActMap, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">AbstractModel.ModifyGeneratedMapLate(IRunState, ActMap, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyHandDraw(Player, decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyHandDrawLate(Player, decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyHealAmount(Creature, decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyHpLostBeforeOsty(Creature, decimal, ValueProp, Creature, CardModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyHpLostBeforeOstyLate(Creature, decimal, ValueProp, Creature, CardModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyHpLostAfterOsty(Creature, decimal, ValueProp, Creature, CardModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyHpLostAfterOstyLate(Creature, decimal, ValueProp, Creature, CardModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyMaxEnergy(Player, decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">AbstractModel.ModifyMerchantCardPool(Player, IEnumerable&lt;CardModel&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ModifyMerchantCardRarity(Player, CardRarity)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">AbstractModel.ModifyMerchantCardCreationResults(Player, List&lt;CardCreationResult&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyMerchantPrice(Player, MerchantEntry, decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyOrbValue(Player, decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyPowerAmountGiven(PowerModel, Creature, decimal, Creature, CardModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyRestSiteHealAmount(Creature, decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">AbstractModel.ModifyShuffleOrder(Player, List&lt;CardModel&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifySummonAmount(Player, decimal, AbstractModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ModifyUnblockedDamageTarget(Creature, decimal, ValueProp, Creature)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ModifyNextEvent(EventModel)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlyset-1">AbstractModel.ModifyUnknownMapPointRoomTypes(IReadOnlySet&lt;RoomType&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">AbstractModel.ModifyOddsIncreaseForUnrolledRoomType(RoomType, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">AbstractModel.ModifyXValue(CardModel, int)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.TryModifyCardBeingAddedToDeck(CardModel, out CardModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.TryModifyCardBeingAddedToDeckLate(CardModel, out CardModel)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">AbstractModel.TryModifyCardRewardAlternatives(Player, CardReward, List&lt;CardRewardAlternative&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">AbstractModel.TryModifyCardRewardOptions(Player, List&lt;CardCreationResult&gt;, CardCreationOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">AbstractModel.TryModifyCardRewardOptionsLate(Player, List&lt;CardCreationResult&gt;, CardCreationOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.TryModifyEnergyCostInCombat(CardModel, decimal, out decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.TryModifyStarCost(CardModel, decimal, out decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.TryModifyPowerAmountReceived(PowerModel, Creature, decimal, Creature, out decimal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">AbstractModel.TryModifyRestSiteOptions(Player, ICollection&lt;RestSiteOption&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">AbstractModel.TryModifyRestSiteHealRewards(Player, List&lt;Reward&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">AbstractModel.TryModifyRewards(Player, List&lt;Reward&gt;, AbstractRoom)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">AbstractModel.TryModifyRewardsLate(Player, List&lt;Reward&gt;, AbstractRoom)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">AbstractModel.ModifyExtraRestSiteHealText(Player, IReadOnlyList&lt;LocString&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldAddToDeck(CardModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldAfflict(CardModel, AfflictionModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldAllowAncient(Player, AncientEventModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldAllowHitting(Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldAllowTargeting(Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldAllowSelectingMoreCardRewards(Player, CardReward)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldClearBlock(Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldDie(Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldDieLate(Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldDisableRemainingRestSiteOptions(Player)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">AbstractModel.ShouldDraw(Player, bool)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldEtherealTrigger(CardModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldFlush(Player)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ShouldGainGold(decimal, Player)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">AbstractModel.ShouldGainStars(decimal, Player)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldGenerateTreasure(Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldPayExcessEnergyCostWithStars(Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldPlay(CardModel, AutoPlayType)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldPlayerResetEnergy(Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldProceedToNextMapPoint()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldProcurePotion(PotionModel, Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldPowerBeRemovedOnDeath(PowerModel)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldRefillMerchantEntry(MerchantEntry, Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldAllowMerchantCardRemoval(Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldCreatureBeRemovedFromCombatAfterDeath(Creature)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldStopCombatFromEnding()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldTakeExtraTurn(Player)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ShouldForcePotionReward(Player, RoomType)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ToString()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">AbstractModel.NeverEverCallThisOutsideOfTests_SetIsMutable(bool)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.Id</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.IsMutable</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.IsCanonical</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.CategorySortingId</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.EntrySortingId</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.PreviewOutsideOfCombat</span>
+    </div>
+    <div>
+      <span class="xref">AbstractModel.ExecutionFinished</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="ModSmith_Models_ModSmithAncientEventModel_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><h2 id="localization">Localization</h2>
+<p><code>ancients.json</code> must contain localization keys for the ancient:</p>
+<pre><code class="lang-csharp">[ID].title     // The name of the ancient.
+[ID].epithet   // A subtitle for the ancient.</code></pre>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ModSmith_Models_ModSmithAncientEventModel_AllPossibleOptions_" data-uid="ModSmith.Models.ModSmithAncientEventModel.AllPossibleOptions*"></a>
+
+  <h3 id="ModSmith_Models_ModSmithAncientEventModel_AllPossibleOptions" data-uid="ModSmith.Models.ModSmithAncientEventModel.AllPossibleOptions">
+  AllPossibleOptions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/cpimhoff/sts2_modsmith/blob/main/ModSmith/src/Model/ModSmithAncientEventModel.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>All possible options that the ancient can offer.</p>
+<p>This is used to populate the ancient's unique relics and cards into the compendium,
+and is not generally used during a run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override abstract IReadOnlyList&lt;EventOption&gt; AllPossibleOptions { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<span class="xref">EventOption</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ModSmith_Models_ModSmithAncientEventModel_BackgroundScenePath_" data-uid="ModSmith.Models.ModSmithAncientEventModel.BackgroundScenePath*"></a>
+
+  <h3 id="ModSmith_Models_ModSmithAncientEventModel_BackgroundScenePath" data-uid="ModSmith.Models.ModSmithAncientEventModel.BackgroundScenePath">
+  BackgroundScenePath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/cpimhoff/sts2_modsmith/blob/main/ModSmith/src/Model/ModSmithAncientEventModel.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The background scene for the event.
+This can be a <code>.tscn</code> file or an image file.
+If an image is provided, ModSmith will generate a simple scene which
+displays the image centered and scaled to fit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string BackgroundScenePath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ModSmith_Models_ModSmithAncientEventModel_MapIconOutlinePath_" data-uid="ModSmith.Models.ModSmithAncientEventModel.MapIconOutlinePath*"></a>
+
+  <h3 id="ModSmith_Models_ModSmithAncientEventModel_MapIconOutlinePath" data-uid="ModSmith.Models.ModSmithAncientEventModel.MapIconOutlinePath">
+  MapIconOutlinePath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/cpimhoff/sts2_modsmith/blob/main/ModSmith/src/Model/ModSmithAncientEventModel.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The path to the map icon outline for the ancient.</p>
+<p>If not provided, a default icon will be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string MapIconOutlinePath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ModSmith_Models_ModSmithAncientEventModel_MapIconPath_" data-uid="ModSmith.Models.ModSmithAncientEventModel.MapIconPath*"></a>
+
+  <h3 id="ModSmith_Models_ModSmithAncientEventModel_MapIconPath" data-uid="ModSmith.Models.ModSmithAncientEventModel.MapIconPath">
+  MapIconPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/cpimhoff/sts2_modsmith/blob/main/ModSmith/src/Model/ModSmithAncientEventModel.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The path to the map icon for the ancient.</p>
+<p>If not provided, a default icon will be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string MapIconPath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ModSmith_Models_ModSmithAncientEventModel_RunHistoryIconOutlinePath_" data-uid="ModSmith.Models.ModSmithAncientEventModel.RunHistoryIconOutlinePath*"></a>
+
+  <h3 id="ModSmith_Models_ModSmithAncientEventModel_RunHistoryIconOutlinePath" data-uid="ModSmith.Models.ModSmithAncientEventModel.RunHistoryIconOutlinePath">
+  RunHistoryIconOutlinePath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/cpimhoff/sts2_modsmith/blob/main/ModSmith/src/Model/ModSmithAncientEventModel.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The path to the run history icon outline for the ancient.</p>
+<p>If not provided, a default icon will be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string RunHistoryIconOutlinePath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ModSmith_Models_ModSmithAncientEventModel_RunHistoryIconPath_" data-uid="ModSmith.Models.ModSmithAncientEventModel.RunHistoryIconPath*"></a>
+
+  <h3 id="ModSmith_Models_ModSmithAncientEventModel_RunHistoryIconPath" data-uid="ModSmith.Models.ModSmithAncientEventModel.RunHistoryIconPath">
+  RunHistoryIconPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/cpimhoff/sts2_modsmith/blob/main/ModSmith/src/Model/ModSmithAncientEventModel.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The path to the run history icon for the ancient.
+This is also used as the icon for when the ancient is the speaker in dialogue.</p>
+<p>If not provided, a default icon will be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string RunHistoryIconPath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ModSmith_Models_ModSmithAncientEventModel_DefineDialogues_" data-uid="ModSmith.Models.ModSmithAncientEventModel.DefineDialogues*"></a>
+
+  <h3 id="ModSmith_Models_ModSmithAncientEventModel_DefineDialogues" data-uid="ModSmith.Models.ModSmithAncientEventModel.DefineDialogues">
+  DefineDialogues()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/cpimhoff/sts2_modsmith/blob/main/ModSmith/src/Model/ModSmithAncientEventModel.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate the dialogue sets for this ancient.</p>
+<p>If not provided, a default generic dialogue set will be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override AncientDialogueSet DefineDialogues()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">AncientDialogueSet</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ModSmith_Models_ModSmithAncientEventModel_GenerateInitialOptions_" data-uid="ModSmith.Models.ModSmithAncientEventModel.GenerateInitialOptions*"></a>
+
+  <h3 id="ModSmith_Models_ModSmithAncientEventModel_GenerateInitialOptions" data-uid="ModSmith.Models.ModSmithAncientEventModel.GenerateInitialOptions">
+  GenerateInitialOptions()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/cpimhoff/sts2_modsmith/blob/main/ModSmith/src/Model/ModSmithAncientEventModel.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate the options for the event, such as the relics or boons the player
+can gain. Generally, ancients offer three options.</p>
+<p>Most ancients in the base game define 3 or more &quot;pools&quot; of options, and then
+use <code>Rng.NextItem</code> to select one option from each pool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override abstract IReadOnlyList&lt;EventOption&gt; GenerateInitialOptions()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<span class="xref">EventOption</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="ModSmith_Models_ModSmithAncientEventModel_GenerateInitialOptions_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The term &quot;Initial&quot; here is a bit misleading. Whatever you return here will be the
+choices the player has when they encounter the ancient. The term &quot;Initial&quot; is reused
+from the base &quot;EventModel&quot; class, in which event options can change over time.
+This is not the case for ancients.</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/cpimhoff/sts2_modsmith/blob/main/ModSmith/src/Model/ModSmithAncientEventModel.cs/#L27" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

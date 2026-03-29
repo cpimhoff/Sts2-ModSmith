@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Decompiling Slay the Spire 2 | ModSmith </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Decompiling Slay the Spire 2 | ModSmith ">
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/cpimhoff/sts2_modsmith/blob/main/docsite/docs/setup/decompile.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/icon.png" alt="ModSmith">
+            ModSmith
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="decompiling-slay-the-spire-2">Decompiling Slay the Spire 2</h1>
+
+<p>When writing mods, it is often necessary to read the game's source code to understand how systems work, what to patch, or as reference to how to build certain behaviors. Slay the Spire 2 ships as a compiled binary, but it can be decompiled with publicly available tooling.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Slay the Spire 2 is compiled without obfuscation, allowing anyone who legally owns a copy of the game to inspect its full source code and assets for reference and learning. However, this does not give you permission to <em>redistribute</em> decompiled game code or assets.</p>
+</div>
+<h2 id="decompiling-with-gdretools">Decompiling with GDRETools</h2>
+<p><strong><a href="https://github.com/GDRETools/gdsdecomp">GDRETools</a></strong> (Godot Reverse Engineering Tools) can extract and decompile Godot <code>.pck</code> files, including all CS and resource files (images, scenes, etc.) bundled with STS2. This app is cross-platform and available for Windows, macOS, and Linux.</p>
+<ol>
+<li><p>Download the latest release of GDRETools from <a href="https://github.com/GDRETools/gdsdecomp/releases">github.com/GDRETools/gdsdecomp/releases</a> for your platform.</p>
+</li>
+<li><p>Launch the GDRETools application.</p>
+</li>
+<li><p>Use <strong>Recover Project</strong> (or the equivalent option in your version) and point it at the STS2 <code>.pck</code> file. The <code>.pck</code> is located in the same directory as the STS2 executable:</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th><code>.pck</code> location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>C:\Program Files (x86)\Steam\steamapps\common\Slay the Spire 2\sts2.pck</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>~/.local/share/Steam/steamapps/common/Slay the Spire 2/sts2.pck</td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>~/Library/Application Support/Steam/steamapps/common/Slay the Spire 2/SlayTheSpire2.app/Contents/Resources/Slay the Spire 2.pck</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose an output directory. GDRETools will extract all resource files to that location.</p>
+</li>
+</ol>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Do not extract the Slay the Spire 2 project into the same repository or folder as your mod. Doing so may cause your mod to bundle content that you do not have permission to redistribute.</p>
+</div>
+<h2 id="what-to-look-for">What to look for</h2>
+<p>The most useful references for modders are typically:</p>
+<ul>
+<li><code>src/Core</code>: All the C# logic for the game.
+<ul>
+<li><code>src/Core/Models/</code> includes all the base asset types for the game, and all the implementations for cards, potions, relics, etc.</li>
+</ul>
+</li>
+<li><code>localization/eng</code>: All the localization keys and string values for all game content.</li>
+<li><code>images/</code>: All the sprites for the game.</li>
+<li><code>scenes/</code>: All the Godot scenes for the game.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/cpimhoff/sts2_modsmith/blob/main/docsite/docs/setup/decompile.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

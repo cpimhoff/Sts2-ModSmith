@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Guided set up | ModSmith </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Guided set up | ModSmith ">
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/cpimhoff/sts2_modsmith/blob/main/docsite/docs/setup/guided.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/icon.png" alt="ModSmith">
+            ModSmith
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="guided-set-up">Guided set up</h1>
+
+<p>This guide walks you through setting up a mod for Slay the Spire 2 from scratch. No prior experience with C# or Godot is assumed.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Heads up! Setting up a proper development environment for any software can be time consuming and fickle, but you can do it!</p>
+</div>
+<p>Provided is a guide to getting started, from zero to a fully working (though pretty simple) mod. This document can be followed by people of many skill levels to getting to a stable environment where you can build their first mod.</p>
+<p>If you already have a working knowledge of C# build systems or have already built a Slay the Spire 2 mod, you likely can get yourself set up simply through <a href="manual.html">the manual instructions</a>.</p>
+<hr>
+<h2 id="install-net-9">Install .NET 9</h2>
+<p>.NET is the platform that C# mods are compiled and run on. You'll need version 9.</p>
+<ol>
+<li><a href="https://dotnet.microsoft.com/download/dotnet/9.0">Download the <strong>.NET 9.0 SDK</strong> installer for your operating system</a> from Microsoft. Note, you need the full SDK, not just the runtime.</li>
+<li>Run the installer</li>
+</ol>
+<p>To verify it worked, open a terminal (on macOS: <strong>Terminal</strong> from Spotlight; on Windows: <strong>Command Prompt</strong> or <strong>PowerShell</strong>; on Linux: your terminal of choice) and run:</p>
+<pre><code class="lang-bash">dotnet --version
+</code></pre>
+<p>You should see a version number starting with <code>9.</code>. If you see an error, restart your terminal and try again.</p>
+<h2 id="download-megadot">Download MegaDot</h2>
+<p>MegaDot is a custom build of the Godot game engine that Slay the Spire 2 is built on. It is used to package your mod's resources.</p>
+<ol>
+<li>Go to <a href="https://megadot.megacrit.com/">https://megadot.megacrit.com/</a></li>
+<li>Download the version for your operating system</li>
+</ol>
+<h2 id="install-visual-studio-code">Install Visual Studio Code</h2>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> (VSCode) is a free code editor that works great for C# development. You can use any other IDE, this is just my suggestion.</p>
+<ol>
+<li>Download and install VSCode from <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></li>
+<li>Open VSCode and go to the <strong>Extensions</strong> panel (the square icon on the left sidebar)</li>
+<li>Search for and install the C# extension (<code>ms-dotnettools.csharp</code>)</li>
+</ol>
+<h2 id="install-modsmith">Install ModSmith</h2>
+<p>ModSmith is the modding framework your mod will depend on. It must be present in STS2's <code>mods/</code> folder at build time.</p>
+<p>Follow the instructions to <a href="install.html">install ModSmith</a>.</p>
+<h2 id="initializing-your-mod-from-the-template">Initializing your mod from the template</h2>
+<p>A Slay the Spire 2 mod needs a fair amount of &quot;boilerplate&quot; (glue code) to get working. A ModSmith mod for Slay the Spire 2 can be quickly generated using a <code>dotnet</code> template:</p>
+<pre><code class="lang-bash">dotnet new install ModSmith.Templates
+dotnet new modsmith-mod -o YourModName --StarterContent
+</code></pre>
+<blockquote>
+<p>Note that your mod's name must be one word. It is convention to use <a href="https://www.tuple.nl/en/knowledge-base/pascal-case">&quot;PascalCase&quot;</a> for mod names.</p>
+</blockquote>
+<h2 id="build-and-run-your-mod">Build and run your mod</h2>
+<p>Open a terminal inside your mod folder. Run:</p>
+<pre><code class="lang-bash">dotnet publish
+</code></pre>
+<p>This compiles your mod, and copies the result to the game's mods folder. If the build succeeds, you'll see a message like <code>Build succeeded</code>.</p>
+<p>Once the game is running with your mod, you can find some new content from the starter content. To quickly test, open the in-game developer console (using the <code>~</code> key) and type:</p>
+<pre><code class="lang-bash">potion DROP_OF_GOLD
+</code></pre>
+<p>This will grant you an example potion which was included as part of your mod. Drink it, and you'll gain some gold.</p>
+<blockquote>
+<p>If this didn't work, inspect the logs for your game by opening the developer console and running <code>open logs</code>.</p>
+</blockquote>
+<p>Try making changes to <code>DropOfGold.cs</code>, and then recompile the mod:</p>
+<pre><code class="lang-bash">dotnet publish
+</code></pre>
+<p>Restart the game, give yourself the potion again, and see if how your changes affected the potion!</p>
+<p>Congrats! You are now a modder!</p>
+<hr>
+<h2 id="next-steps">Next steps</h2>
+<p>Now that your mod builds and runs, explore the rest of this documentation:</p>
+<ul>
+<li><strong><a href="decompile.html">Decompile Slay the Spire 2</a></strong>: Get access to all the Slay the Spire 2 source code and art assets for reference.</li>
+<li><strong><a href="../concepts/index.html">Concepts</a></strong>: understand the core systems (event hooks, localization, resource paths) in Slay the Spire 2.</li>
+<li><strong><a href="../examples/index.html">Examples</a></strong>: browse working examples for custom cards, relics, events, and more.</li>
+<li><strong><a href="/api/ModSmith.Models.html">API Reference</a></strong>: detailed documentation for every ModSmith class and method.</li>
+</ul>
+<p>When you're ready to start adding your own content, remove the <code>StarterContent</code> from your mod, and start building!</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/cpimhoff/sts2_modsmith/blob/main/docsite/docs/setup/guided.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
