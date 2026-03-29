@@ -1,5 +1,7 @@
 {
+  //#if (!NoStarterContent)
   "GOLD_ARMOR.title": "Gold Armor",
   "GOLD_ARMOR.description": "At the start of each turn, pay [blue]{Gold}[/blue] [gold]Gold[/gold] to gain [blue]{Block}[/blue] [gold]Block[/gold].",
   "GOLD_ARMOR.flavor": "[red]An example relic bundled with ModSmith.[/red]"
+  //#endif
 }

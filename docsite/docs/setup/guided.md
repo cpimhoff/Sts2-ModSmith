@@ -52,12 +52,11 @@ Follow the instructions to [install ModSmith](./install.md).
 A Slay the Spire 2 mod needs a fair amount of "boilerplate" (glue code) to get working. A ModSmith mod for Slay the Spire 2 can be quickly generated using a `dotnet` template:
 
 ```bash
-dotnet new ... --name YourModName
+dotnet new install ModSmith.Templates
+dotnet new modsmith-mod -o YourModName --StarterContent
 ```
 
 > Note that your mod's name must be one word. It is convention to use ["PascalCase"](https://www.tuple.nl/en/knowledge-base/pascal-case) for mod names.
-
-The template, by default, ships with a simple custom potion called "Drop of Gold". This can be disabled for mods if you pass `--no-example-content`.
 
 ## Build and run your mod
 
@@ -69,12 +68,12 @@ dotnet publish
 
 This compiles your mod, and copies the result to the game's mods folder. If the build succeeds, you'll see a message like `Build succeeded`.
 
-Once the game is running with your mod, you can find the potion in a run. To test more quickly, open the in-game developer console (using the `~` key) and type:
+Once the game is running with your mod, you can find some new content from the starter content. To quickly test, open the in-game developer console (using the `~` key) and type:
 ```bash
 potion DROP_OF_GOLD
 ```
 
-This will grant you the example potion. Drink it, and you'll gain some gold.
+This will grant you an example potion which was included as part of your mod. Drink it, and you'll gain some gold.
 
 > If this didn't work, inspect the logs for your game by opening the developer console and running `open logs`.
 
@@ -84,7 +83,7 @@ dotnet publish
 ```
 Restart the game, give yourself the potion again, and see if how your changes affected the potion!
 
-Congrats! You are now a modder.
+Congrats! You are now a modder!
 
 ---
 

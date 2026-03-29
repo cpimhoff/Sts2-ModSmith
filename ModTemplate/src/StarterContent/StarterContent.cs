@@ -4,12 +4,12 @@ using ModSmith.Registry;
 
 namespace ModTemplate;
 
-public static class ModTemplateExamples
+public static class StarterContent
 {
-  public static void RegisterAll()
+  public static void RegisterStarterContent()
   {
-    Registry.RegisterCard<CoinFlip, ColorlessCardPool>();
     Registry.RegisterPotion<DropOfGold>();
+    Registry.RegisterCard<CoinFlip, ColorlessCardPool>();
     Registry.RegisterRelic<GoldArmor>();
     Registry.RegisterPotion<GoldPaint>();
     Registry.RegisterPower<MadeOfGold>();
