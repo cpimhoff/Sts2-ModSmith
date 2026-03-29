@@ -63,7 +63,7 @@ Res.Global("sts2/images/cards/some_card.png")
 // → res://sts2/images/cards/some_card.png
 ```
 
-Use this to reference assets that ship with Slay the Spire II. You can find available paths by extracting the game's `.pck` — see [Decompiling STS2](../setup/decompile.md).
+Use this to reference assets that ship with Slay the Spire 2. You can find available paths by extracting the game's `.pck` — see [Decompiling STS2](../setup/decompile.md).
 
 ### `Res.ModSmith(path)` — ModSmith's built-in resources
 
@@ -79,11 +79,7 @@ ModSmith ships default placeholder images and other shared resources. A full ind
 Assuming you have placed an image at `YourMod/images/my_card.png`:
 
 ```csharp
-public override string CardArtPath => YourModMain.Res.Mod("images/my_card.png");
+public override string PortraitPath => YourModMain.Res.Mod("images/my_card.png");
 ```
 
-If you haven't made custom art yet, you can use a ModSmith placeholder:
-
-```csharp
-public override string CardArtPath => YourModMain.Res.ModSmith("images/placeholders/card_default.png");
-```
+ModSmith ships with fallbacks for most art assets, allowing you to prototype game logic before making any art.

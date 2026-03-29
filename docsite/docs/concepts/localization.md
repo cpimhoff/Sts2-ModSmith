@@ -1,10 +1,10 @@
-# Localization
+# Localization Keys
 
-All player-visible text in Slay the Spire II is stored in JSON localization files and looked up at runtime by key. Your mod must provide these files for any content it adds.
+All player-visible text in Slay the Spire 2 is stored in JSON localization files and looked up at runtime by key. Your mod must provide these files for any content it adds.
 
 ## File layout
 
-Localization files live inside your mod's resource folder under `localization/eng/`:
+Localization files live inside your mod's resource folder under `localization/<lang>/`:
 
 ```
 YourMod/
@@ -22,78 +22,13 @@ YourMod/
 
 Each file is a flat JSON object mapping string keys to string values. You only need to include the files relevant to your mod's content.
 
-### Including files in the build
+> Unlike other resources included in your mod's resource directory, which are copied in directly, Slay the Spire 2 has a special case for localization files, where all mod's localization files are _merged together_ during mod initialization.
 
-Localization files must be declared as `AdditionalFiles` in your `.csproj` so they are included in the `.pck`:
+## Required keys
 
-```xml
-<ItemGroup>
-    <AdditionalFiles Include="YourMod/localization/**/*.json"/>
-</ItemGroup>
-```
+Most content will implicitly look for keys based on its derived ID. For example, a card class named `MyCard` will look for its name at the key `MY_CARD.title`. ModSmith base classes document what keys will be required.
 
-`ModTemplate` includes this for you.
-
----
-
-## Key naming conventions
-
-### Cards
-
-```json
-{
-  "MY_CARD.title": "Card Name",
-  "MY_CARD.description": "Card description text.",
-  "MY_CARD.someBanter": "Optional banter line."
-}
-```
-
-### Potions
-
-```json
-{
-  "MY_POTION.title": "Potion Name",
-  "MY_POTION.description": "Potion description text."
-}
-```
-
-### Relics
-
-```json
-{
-  "MY_RELIC.title": "Relic Name",
-  "MY_RELIC.description": "Relic description text.",
-  "MY_RELIC.flavor": "Flavor text shown beneath the description."
-}
-```
-
-### Powers
-
-```json
-{
-  "MY_POWER.title": "Power Name",
-  "MY_POWER.description": "Power description text."
-}
-```
-
-### Events
-
-Events have a nested structure reflecting their state machine. Each page and each option within a page gets its own keys:
-
-```json
-{
-  "MY_EVENT.title": "Event Title",
-
-  "MY_EVENT.pages.INITIAL.description": "Introductory page text.",
-  "MY_EVENT.pages.INITIAL.options.CHOICE_A.title": "First choice",
-  "MY_EVENT.pages.INITIAL.options.CHOICE_A.description": "What this choice does.",
-  "MY_EVENT.pages.INITIAL.options.CHOICE_B.title": "Second choice",
-  "MY_EVENT.pages.INITIAL.options.CHOICE_B.description": "What this choice does.",
-
-  "MY_EVENT.pages.OUTCOME_A.description": "Result of choosing A.",
-  "MY_EVENT.pages.OUTCOME_B.description": "Result of choosing B."
-}
-```
+If a localization key is not found at runtime, ModSmith logs a warning and returns a fallback string in the form `"tableName.key"`. This means missing text will be visible in-game as raw key strings rather than causing a crash. This makes it easier to spot during development.
 
 ---
 
@@ -118,15 +53,13 @@ You can show different text depending on whether the item is upgraded:
 - `{IfUpgraded:show: text|}` — shows ` text` if upgraded, shows nothing otherwise
 - The `|` separates the "true" case from the "false" case (empty = nothing shown)
 
----
-
 ## Text markup
 
-The localization system supports inline markup tags for visual styling:
+The localization system supports inline markup tags for visual styling, such as:
 
 | Tag | Effect |
 |-----|--------|
-| `[gold]...[/gold]` | Gold-colored text (for gold/coins) |
+| `[gold]...[/gold]` | Gold-colored text (for keywords) |
 | `[blue]...[/blue]` | Blue-colored text (for numbers/values) |
 | `[green]...[/green]` | Green-colored text (positive effects) |
 | `[red]...[/red]` | Red-colored text (negative effects, damage) |
@@ -136,38 +69,5 @@ The localization system supports inline markup tags for visual styling:
 Example:
 
 ```json
-"MY_POTION.description": "Gain [blue]{Gold}[/blue] [gold]Gold[/gold]."
+"DROP_OF_GOLD.description": "Gain [blue]{Gold}[/blue] [gold]gold[/gold]."
 ```
-
----
-
-## Static hover tips
-
-`static_hover_tips.json` defines reusable tooltip text that can appear when a player hovers over a keyword. Use this for custom keywords or mechanics that need explanation across multiple cards.
-
-```json
-{
-  "MY_KEYWORD": "Description of what this keyword does."
-}
-```
-
----
-
-## Custom keys
-
-Your model can read arbitrary keys from the localization tables beyond the standard ones. The `ModTemplate` card example uses this for banter lines:
-
-```json
-{
-  "COIN_FLIP.headsBanter": "[green]Heads![/green]",
-  "COIN_FLIP.tailsBanter": "[red]Tails.[/red]"
-}
-```
-
-These are read in code via the mod's localization table. Check the [API reference](https://github.com/cpimhoff/Sts2-ModSmith) and the example implementations in `ModTemplate` for how to retrieve custom keys at runtime.
-
----
-
-## Missing keys
-
-If a localization key is not found at runtime, ModSmith logs a warning and returns a fallback string in the form `"tableName.key"`. This means missing text will be visible in-game as raw key strings rather than causing a crash, which makes it easy to spot during development.

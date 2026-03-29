@@ -1,6 +1,6 @@
 {
   "DROP_OF_GOLD.title": "Drop of Gold",
-  "DROP_OF_GOLD.description": "Gain [blue]{Gold}[/blue] [gold]Gold[/gold].",
+  "DROP_OF_GOLD.description": "Gain [blue]{Gold}[/blue] [gold]gold[/gold].",
   "GOLD_PAINT.title": "Gold Paint",
-  "GOLD_PAINT.description": "Apply [blue]{MadeOfGold}[/blue] [gold]Made of Gold[/gold] to an enemy."
+  "GOLD_PAINT.description": "Apply [blue]{MadeOfGold}[/blue] [gold]made of gold[/gold] to an enemy."
 }

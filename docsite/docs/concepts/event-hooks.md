@@ -18,10 +18,6 @@ public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContex
 }
 ```
 
-> Hooks are `async`-compatible. You can `await` game commands inside them. If you don't need to await anything, you can still `override` the method and call `return Task.CompletedTask` (or just return a completed task from whatever you call).
-
-The engine only calls a hook on a model if `ShouldReceiveCombatHooks` returns `true` on that instance. ModSmith's model base classes handle this for you.
-
 ## Hook categories
 
 The following is a high-level overview of the hook categories available. For the full, authoritative list, study the decompiled `AbstractModel.cs` — see [Decompiling STS2](../setup/decompile.md).

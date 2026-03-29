@@ -1,6 +1,6 @@
-# Slay the Spire II ~ ModSmith
+# Slay the Spire 2 ~ ModSmith
 
-Base mod for adding content to Slay The Spire II
+Base mod for adding content to Slay the Spire 2
 
 # For Mod Users
 
@@ -10,11 +10,11 @@ If you are installing mods _by hand_, you may need to install this mod. Otherwis
 
 # Introduction to Modding
 
-Slay the Spire II is built using a fork of [Godot](https://godotengine.org/) called [MegaDot](https://megadot.megacrit.com/). Patches (modifications to game code) are handled using [Harmony](https://github.com/pardeike/Harmony).
+Slay the Spire 2 is built using a fork of [Godot](https://godotengine.org/) called [MegaDot](https://megadot.megacrit.com/). Patches (modifications to game code) are handled using [Harmony](https://github.com/pardeike/Harmony).
 
 **Patching** is the main source of why mods break when the game updates, and why mods may conflict. Patches are naturally fickle things -- they instruct the game to run different than the developers intended for a given function. When that code changes, or multiple mods attempt to patch the same function, problems can arise. `ModSmith` is designed specifically to patch common sections of the game code so multiple mods can all contribute content without conflicting (and making contributing content easier). In addition, `ModSmith` can handle if those common injection sites change between game versions, making mods built with `ModSmith` more robust to game updates.
 
-A packaged mod for Slay the Spire II is comprised of 3 major components:
+A packaged mod for Slay the Spire 2 is comprised of 3 major components:
 - A `.dll` file, which contains all code for the mod.
 - A `.pck` ([Godot resource pack](https://docs.godotengine.org/en/stable/tutorials/export/exporting_pcks.html)) file, which contains asset files (art, Godot scenes, etc) for use by the Godot game engine.
 - A `.json` metadata file, which describes the mod.
@@ -27,15 +27,15 @@ The `.json` file is a simple text file you can author by hand.
 
 ## Prerequisites
 
-- Install Slay the Spire II from Steam: https://store.steampowered.com/app/2868840/Slay_the_Spire_2/
+- Install Slay the Spire 2 from Steam: https://store.steampowered.com/app/2868840/Slay_the_Spire_2/
 - Install the `dotnet` 9.0 SDK: https://dotnet.microsoft.com/en-us/download/dotnet/9.0/
 - Install MegaDot: https://megadot.megacrit.com/
 
-### (Optional) Decompile Slay the Spire II
+### (Optional) Decompile Slay the Spire 2
 
-Slay the Spire II's source code and complete Godot package cannot be publicly shared since it is a paid game. However, the developers at Megacrit were _extremely kind_ in compiling their game without obfuscation. If you own a copy of the game, you can _decompile_ it to get the fully game as its full Godot project, including its source code.
+Slay the Spire 2's source code and complete Godot package cannot be publicly shared since it is a paid game. However, the developers at Megacrit were _extremely kind_ in compiling their game without obfuscation. If you own a copy of the game, you can _decompile_ it to get the fully game as its full Godot project, including its source code.
 
 This is a hugely helpful resource, both directly for modding and for any hobbyist who wants to see a complete example of a production video game.
 
 Install https://github.com/GDRETools/gdsdecomp.
-Open the app. Select "Recover project..." and select the base Slay the Spire II `.pck`. This is likely located in your `steamapps/common/Slay The Spire II` directory.
+Open the app. Select "Recover project..." and select the base Slay the Spire 2 `.pck`. This is likely located in your `steamapps/common/Slay the Spire 2` directory.
