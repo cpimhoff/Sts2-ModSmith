@@ -30,6 +30,7 @@
       "_appName": "ModSmith",
       "_appTitle": "ModSmith",
       "_appLogoPath": "images/icon.png",
+      "_appFaviconPath": "images/favicon.png",
       "_enableSearch": true,
       "pdf": false
     }
