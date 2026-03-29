@@ -133,7 +133,7 @@ h6, .h6 { font-size: 0.85rem;  font-weight: 600; text-transform: uppercase; lett
 article {
     max-width: 800px;
 }
-#about-modsmith img {
+.charlie-and-rolo {
   border-radius: 4px;
   box-shadow: 0px 0 4px darkgreen;
 }
