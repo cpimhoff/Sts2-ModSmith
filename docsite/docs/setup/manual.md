@@ -13,6 +13,8 @@ This page enumerates the requirements to mod Slay the Spire 2.
 
 ## Project template
 
-Use `ModTemplate` from the [ModSmith repository](https://github.com/cpimhoff/Sts2-ModSmith) as your starting point. It includes a pre-configured `.csproj`, mod manifest, and a set of working examples.
+A ModSmith mod for Slay the Spire 2 can be quickly generated using a `dotnet` template:
 
-> A `dotnet new` template will be added in a future update.
+```bash
+dotnet new ... --name YourModName
+```

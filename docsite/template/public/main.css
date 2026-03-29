@@ -129,9 +129,36 @@ h6, .h6 { font-size: 0.85rem;  font-weight: 600; text-transform: uppercase; lett
     opacity: 0.65;
 }
 
-/* ─── Content width ──────────────────────────────────────────────────────── */
+/* ─── Content ────────────────────────────────────────────────────────────── */
 article {
     max-width: 800px;
+}
+#about-modsmith img {
+  border-radius: 4px;
+  box-shadow: 0px 0 4px darkgreen;
+}
+.navbar {
+  background-color: #0064000a;
+}
+
+/* ─── Navbar separators ──────────────────────────────────────────────────── */
+.navbar-nav li:nth-child(1),
+.navbar-nav li:nth-child(2),
+.navbar-nav li:nth-child(5) {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav li:nth-child(1)::before,
+.navbar-nav li:nth-child(2)::before,
+.navbar-nav li:nth-child(5)::before {
+    content: '·';
+    margin: 0 0.6rem;
+    opacity: 0.5;
+}
+
+.nav-link.active {
+  font-weight: 500;
 }
 
 /* ─── Heading ─────────────────────────────────────────────────────────────── */
